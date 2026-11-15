@@ -1,0 +1,789 @@
+{
+  "overflow": [
+    {
+      "breite": 360,
+      "seite": "/index.html",
+      "scrollWidth": 360,
+      "clientWidth": 360,
+      "bodyScroll": 360,
+      "breiter": [],
+      "ok": true
+    },
+    {
+      "breite": 360,
+      "seite": "/leistungen.html",
+      "scrollWidth": 360,
+      "clientWidth": 360,
+      "bodyScroll": 360,
+      "breiter": [],
+      "ok": true
+    },
+    {
+      "breite": 360,
+      "seite": "/arbeiten.html",
+      "scrollWidth": 360,
+      "clientWidth": 360,
+      "bodyScroll": 360,
+      "breiter": [],
+      "ok": true
+    },
+    {
+      "breite": 360,
+      "seite": "/ueber-uns.html",
+      "scrollWidth": 360,
+      "clientWidth": 360,
+      "bodyScroll": 360,
+      "breiter": [],
+      "ok": true
+    },
+    {
+      "breite": 360,
+      "seite": "/kontakt.html",
+      "scrollWidth": 360,
+      "clientWidth": 360,
+      "bodyScroll": 360,
+      "breiter": [],
+      "ok": true
+    },
+    {
+      "breite": 360,
+      "seite": "/danke.html",
+      "scrollWidth": 360,
+      "clientWidth": 360,
+      "bodyScroll": 360,
+      "breiter": [],
+      "ok": true
+    },
+    {
+      "breite": 360,
+      "seite": "/impressum.html",
+      "scrollWidth": 360,
+      "clientWidth": 360,
+      "bodyScroll": 360,
+      "breiter": [],
+      "ok": true
+    },
+    {
+      "breite": 360,
+      "seite": "/datenschutz.html",
+      "scrollWidth": 360,
+      "clientWidth": 360,
+      "bodyScroll": 360,
+      "breiter": [],
+      "ok": true
+    },
+    {
+      "breite": 360,
+      "seite": "/404.html",
+      "scrollWidth": 360,
+      "clientWidth": 360,
+      "bodyScroll": 360,
+      "breiter": [],
+      "ok": true
+    },
+    {
+      "breite": 768,
+      "seite": "/index.html",
+      "scrollWidth": 768,
+      "clientWidth": 768,
+      "bodyScroll": 768,
+      "breiter": [],
+      "ok": true
+    },
+    {
+      "breite": 768,
+      "seite": "/leistungen.html",
+      "scrollWidth": 768,
+      "clientWidth": 768,
+      "bodyScroll": 768,
+      "breiter": [],
+      "ok": true
+    },
+    {
+      "breite": 768,
+      "seite": "/arbeiten.html",
+      "scrollWidth": 768,
+      "clientWidth": 768,
+      "bodyScroll": 768,
+      "breiter": [],
+      "ok": true
+    },
+    {
+      "breite": 768,
+      "seite": "/ueber-uns.html",
+      "scrollWidth": 768,
+      "clientWidth": 768,
+      "bodyScroll": 768,
+      "breiter": [],
+      "ok": true
+    },
+    {
+      "breite": 768,
+      "seite": "/kontakt.html",
+      "scrollWidth": 768,
+      "clientWidth": 768,
+      "bodyScroll": 768,
+      "breiter": [],
+      "ok": true
+    },
+    {
+      "breite": 768,
+      "seite": "/danke.html",
+      "scrollWidth": 768,
+      "clientWidth": 768,
+      "bodyScroll": 768,
+      "breiter": [],
+      "ok": true
+    },
+    {
+      "breite": 768,
+      "seite": "/impressum.html",
+      "scrollWidth": 768,
+      "clientWidth": 768,
+      "bodyScroll": 768,
+      "breiter": [],
+      "ok": true
+    },
+    {
+      "breite": 768,
+      "seite": "/datenschutz.html",
+      "scrollWidth": 768,
+      "clientWidth": 768,
+      "bodyScroll": 768,
+      "breiter": [],
+      "ok": true
+    },
+    {
+      "breite": 768,
+      "seite": "/404.html",
+      "scrollWidth": 768,
+      "clientWidth": 768,
+      "bodyScroll": 768,
+      "breiter": [],
+      "ok": true
+    },
+    {
+      "breite": 1440,
+      "seite": "/index.html",
+      "scrollWidth": 1440,
+      "clientWidth": 1440,
+      "bodyScroll": 1440,
+      "breiter": [],
+      "ok": true
+    },
+    {
+      "breite": 1440,
+      "seite": "/leistungen.html",
+      "scrollWidth": 1440,
+      "clientWidth": 1440,
+      "bodyScroll": 1440,
+      "breiter": [],
+      "ok": true
+    },
+    {
+      "breite": 1440,
+      "seite": "/arbeiten.html",
+      "scrollWidth": 1440,
+      "clientWidth": 1440,
+      "bodyScroll": 1440,
+      "breiter": [],
+      "ok": true
+    },
+    {
+      "breite": 1440,
+      "seite": "/ueber-uns.html",
+      "scrollWidth": 1440,
+      "clientWidth": 1440,
+      "bodyScroll": 1440,
+      "breiter": [],
+      "ok": true
+    },
+    {
+      "breite": 1440,
+      "seite": "/kontakt.html",
+      "scrollWidth": 1440,
+      "clientWidth": 1440,
+      "bodyScroll": 1440,
+      "breiter": [],
+      "ok": true
+    },
+    {
+      "breite": 1440,
+      "seite": "/danke.html",
+      "scrollWidth": 1440,
+      "clientWidth": 1440,
+      "bodyScroll": 1440,
+      "breiter": [],
+      "ok": true
+    },
+    {
+      "breite": 1440,
+      "seite": "/impressum.html",
+      "scrollWidth": 1440,
+      "clientWidth": 1440,
+      "bodyScroll": 1440,
+      "breiter": [],
+      "ok": true
+    },
+    {
+      "breite": 1440,
+      "seite": "/datenschutz.html",
+      "scrollWidth": 1440,
+      "clientWidth": 1440,
+      "bodyScroll": 1440,
+      "breiter": [],
+      "ok": true
+    },
+    {
+      "breite": 1440,
+      "seite": "/404.html",
+      "scrollWidth": 1440,
+      "clientWidth": 1440,
+      "bodyScroll": 1440,
+      "breiter": [],
+      "ok": true
+    }
+  ],
+  "tastatur": {
+    "skip-360": {
+      "erst": {
+        "tag": "a",
+        "id": "",
+        "cls": "skip-link",
+        "text": "Zum Inhalt springen",
+        "ringSichtbar": true,
+        "imViewport": false
+      },
+      "skipSichtbar": false,
+      "nachEnter": {
+        "id": "inhalt",
+        "hash": "#inhalt"
+      },
+      "naechsterFokus": {
+        "tag": "a",
+        "id": "",
+        "cls": "",
+        "text": "MW-01 Innenanstrich",
+        "ringSichtbar": true,
+        "imViewport": true
+      }
+    },
+    "skip-1440": {
+      "erst": {
+        "tag": "a",
+        "id": "",
+        "cls": "skip-link",
+        "text": "Zum Inhalt springen",
+        "ringSichtbar": true,
+        "imViewport": false
+      },
+      "skipSichtbar": false,
+      "nachEnter": {
+        "id": "inhalt",
+        "hash": "#inhalt"
+      },
+      "naechsterFokus": {
+        "tag": "a",
+        "id": "",
+        "cls": "",
+        "text": "MW-01 Innenanstrich",
+        "ringSichtbar": true,
+        "imViewport": true
+      }
+    },
+    "mobilnav": {
+      "knopfPerTabErreicht": true,
+      "tabs": 3,
+      "knopfFokus": {
+        "tag": "button",
+        "id": "",
+        "cls": "menue-knopf",
+        "text": "Menü öffnen",
+        "ringSichtbar": true,
+        "imViewport": true
+      },
+      "menueVorherSichtbar": false,
+      "offen": {
+        "expanded": "true",
+        "sichtbar": true,
+        "fokus": {
+          "tag": "a",
+          "id": "",
+          "cls": "hauptnav__link",
+          "text": "Leistungen",
+          "ringSichtbar": true,
+          "imViewport": true
+        }
+      },
+      "tabFolge": [
+        "menue:Arbeiten",
+        "menue:Über uns",
+        "menue:Kontakt",
+        "menue:Anrufen",
+        "menue:Anfrage senden",
+        "knopf:Schließen",
+        "menue:Leistungen",
+        "menue:Arbeiten",
+        "menue:Über uns",
+        "menue:Kontakt",
+        "menue:Anrufen",
+        "menue:Anfrage senden"
+      ],
+      "shiftTab": [
+        "Anrufen",
+        "Kontakt",
+        "Über uns"
+      ],
+      "zuNachEscape": {
+        "expanded": "false",
+        "sichtbar": false,
+        "fokusAufKnopf": true
+      },
+      "offenPerSpace": "true",
+      "zuPerEnter": "false",
+      "navigiertPerEnter": "http://localhost:4173/index.html"
+    },
+    "fokusOhneRingOderAusserhalb": [
+      {
+        "breite": 360,
+        "seite": "/index.html",
+        "tag": "a",
+        "id": "",
+        "cls": "skip-link",
+        "text": "Zum Inhalt springen",
+        "ringSichtbar": true,
+        "imViewport": false
+      },
+      {
+        "breite": 360,
+        "seite": "/leistungen.html",
+        "tag": "a",
+        "id": "",
+        "cls": "skip-link",
+        "text": "Zum Inhalt springen",
+        "ringSichtbar": true,
+        "imViewport": false
+      },
+      {
+        "breite": 360,
+        "seite": "/arbeiten.html",
+        "tag": "a",
+        "id": "",
+        "cls": "skip-link",
+        "text": "Zum Inhalt springen",
+        "ringSichtbar": true,
+        "imViewport": false
+      },
+      {
+        "breite": 360,
+        "seite": "/ueber-uns.html",
+        "tag": "a",
+        "id": "",
+        "cls": "skip-link",
+        "text": "Zum Inhalt springen",
+        "ringSichtbar": true,
+        "imViewport": false
+      },
+      {
+        "breite": 360,
+        "seite": "/kontakt.html",
+        "tag": "a",
+        "id": "",
+        "cls": "skip-link",
+        "text": "Zum Inhalt springen",
+        "ringSichtbar": true,
+        "imViewport": false
+      },
+      {
+        "breite": 360,
+        "seite": "/danke.html",
+        "tag": "a",
+        "id": "",
+        "cls": "skip-link",
+        "text": "Zum Inhalt springen",
+        "ringSichtbar": true,
+        "imViewport": false
+      },
+      {
+        "breite": 360,
+        "seite": "/impressum.html",
+        "tag": "a",
+        "id": "",
+        "cls": "skip-link",
+        "text": "Zum Inhalt springen",
+        "ringSichtbar": true,
+        "imViewport": false
+      },
+      {
+        "breite": 360,
+        "seite": "/datenschutz.html",
+        "tag": "a",
+        "id": "",
+        "cls": "skip-link",
+        "text": "Zum Inhalt springen",
+        "ringSichtbar": true,
+        "imViewport": false
+      },
+      {
+        "breite": 360,
+        "seite": "/404.html",
+        "tag": "a",
+        "id": "",
+        "cls": "skip-link",
+        "text": "Zum Inhalt springen",
+        "ringSichtbar": true,
+        "imViewport": false
+      },
+      {
+        "breite": 1440,
+        "seite": "/index.html",
+        "tag": "a",
+        "id": "",
+        "cls": "skip-link",
+        "text": "Zum Inhalt springen",
+        "ringSichtbar": true,
+        "imViewport": false
+      },
+      {
+        "breite": 1440,
+        "seite": "/leistungen.html",
+        "tag": "a",
+        "id": "",
+        "cls": "skip-link",
+        "text": "Zum Inhalt springen",
+        "ringSichtbar": true,
+        "imViewport": false
+      },
+      {
+        "breite": 1440,
+        "seite": "/arbeiten.html",
+        "tag": "a",
+        "id": "",
+        "cls": "skip-link",
+        "text": "Zum Inhalt springen",
+        "ringSichtbar": true,
+        "imViewport": false
+      },
+      {
+        "breite": 1440,
+        "seite": "/ueber-uns.html",
+        "tag": "a",
+        "id": "",
+        "cls": "skip-link",
+        "text": "Zum Inhalt springen",
+        "ringSichtbar": true,
+        "imViewport": false
+      },
+      {
+        "breite": 1440,
+        "seite": "/kontakt.html",
+        "tag": "a",
+        "id": "",
+        "cls": "skip-link",
+        "text": "Zum Inhalt springen",
+        "ringSichtbar": true,
+        "imViewport": false
+      },
+      {
+        "breite": 1440,
+        "seite": "/danke.html",
+        "tag": "a",
+        "id": "",
+        "cls": "skip-link",
+        "text": "Zum Inhalt springen",
+        "ringSichtbar": true,
+        "imViewport": false
+      },
+      {
+        "breite": 1440,
+        "seite": "/impressum.html",
+        "tag": "a",
+        "id": "",
+        "cls": "skip-link",
+        "text": "Zum Inhalt springen",
+        "ringSichtbar": true,
+        "imViewport": false
+      },
+      {
+        "breite": 1440,
+        "seite": "/datenschutz.html",
+        "tag": "a",
+        "id": "",
+        "cls": "skip-link",
+        "text": "Zum Inhalt springen",
+        "ringSichtbar": true,
+        "imViewport": false
+      },
+      {
+        "breite": 1440,
+        "seite": "/404.html",
+        "tag": "a",
+        "id": "",
+        "cls": "skip-link",
+        "text": "Zum Inhalt springen",
+        "ringSichtbar": true,
+        "imViewport": false
+      }
+    ]
+  },
+  "formular": {
+    "tabReihenfolge": [
+      "f-name",
+      "f-telefon",
+      "f-email",
+      "f-ort",
+      "f-leistung",
+      "f-nachricht",
+      "f-zeitraum",
+      "A",
+      "BUTTON"
+    ],
+    "honeypotImTab": false,
+    "leer": {
+      "zusammenfassungSichtbar": true,
+      "fokus": "fehler-zusammenfassung",
+      "fehler": [
+        "Bitte geben Sie Ihren Namen an.",
+        "Bitte geben Sie eine Telefonnummer oder eine E-Mail-Adresse an.",
+        "Bitte beschreiben Sie kurz, was gemacht werden soll."
+      ],
+      "invalid": [
+        "f-name",
+        "f-telefon",
+        "f-email",
+        "f-nachricht"
+      ],
+      "describedName": "f-name-fehler",
+      "links": [
+        "#f-name",
+        "#f-telefon",
+        "#f-nachricht"
+      ]
+    },
+    "nachSprung": "f-name",
+    "axeNachFehlern": [],
+    "ungueltig": [
+      "Bitte geben Sie eine gültige Telefonnummer an – nur Ziffern, Leerzeichen und die Zeichen + ( ) / -.",
+      "Bitte geben Sie eine gültige E-Mail-Adresse an, zum Beispiel name@beispiel.de."
+    ],
+    "nachKorrektur": {
+      "fehler": [],
+      "zus": false
+    },
+    "leistung": "tapezierarbeiten",
+    "nachZeitraum": "A Datenschutzerklärung",
+    "tabNachZeitraum2": "senden",
+    "endUrl": "http://localhost:4173/danke.html#anfrage",
+    "post": [
+      "http://localhost:4173/kontakt.php name=Erika+Muster&telefon=0123+456789&email=erika%40example.org&ort=12345+Musterstadt&leistung=tapezierarbeiten&nachricht=Zwei+Zimmer+neu+streichen.&zeitraum=flexibel&website="
+    ],
+    "vorauswahl": "fassade",
+    "ohneJS": {
+      "valid": false,
+      "required": [
+        "f-name",
+        "f-nachricht"
+      ]
+    }
+  },
+  "reveal": [
+    {
+      "breite": 360,
+      "seite": "/index.html",
+      "webdriver": false,
+      "wartendStart": 20,
+      "gesamt": 20,
+      "wartendEnde": 0,
+      "opacityUnter1": [],
+      "axeSeriousCritical": [],
+      "sichtbarAberTransparentNachEnd": 0
+    },
+    {
+      "breite": 360,
+      "seite": "/leistungen.html",
+      "webdriver": false,
+      "wartendStart": 18,
+      "gesamt": 18,
+      "wartendEnde": 0,
+      "opacityUnter1": [],
+      "axeSeriousCritical": [],
+      "sichtbarAberTransparentNachEnd": 0
+    },
+    {
+      "breite": 360,
+      "seite": "/arbeiten.html",
+      "webdriver": false,
+      "wartendStart": 11,
+      "gesamt": 12,
+      "wartendEnde": 0,
+      "opacityUnter1": [],
+      "axeSeriousCritical": [],
+      "sichtbarAberTransparentNachEnd": 0
+    },
+    {
+      "breite": 360,
+      "seite": "/ueber-uns.html",
+      "webdriver": false,
+      "wartendStart": 12,
+      "gesamt": 12,
+      "wartendEnde": 0,
+      "opacityUnter1": [],
+      "axeSeriousCritical": [],
+      "sichtbarAberTransparentNachEnd": 0
+    },
+    {
+      "breite": 360,
+      "seite": "/kontakt.html",
+      "webdriver": false,
+      "wartendStart": 2,
+      "gesamt": 2,
+      "wartendEnde": 0,
+      "opacityUnter1": [],
+      "axeSeriousCritical": [],
+      "sichtbarAberTransparentNachEnd": 0
+    },
+    {
+      "breite": 360,
+      "seite": "/danke.html",
+      "webdriver": false,
+      "wartendStart": 0,
+      "gesamt": 0,
+      "wartendEnde": 0,
+      "opacityUnter1": [],
+      "axeSeriousCritical": [],
+      "sichtbarAberTransparentNachEnd": 0
+    },
+    {
+      "breite": 360,
+      "seite": "/impressum.html",
+      "webdriver": false,
+      "wartendStart": 0,
+      "gesamt": 0,
+      "wartendEnde": 0,
+      "opacityUnter1": [],
+      "axeSeriousCritical": [],
+      "sichtbarAberTransparentNachEnd": 0
+    },
+    {
+      "breite": 360,
+      "seite": "/datenschutz.html",
+      "webdriver": false,
+      "wartendStart": 0,
+      "gesamt": 0,
+      "wartendEnde": 0,
+      "opacityUnter1": [],
+      "axeSeriousCritical": [],
+      "sichtbarAberTransparentNachEnd": 0
+    },
+    {
+      "breite": 360,
+      "seite": "/404.html",
+      "webdriver": false,
+      "wartendStart": 0,
+      "gesamt": 0,
+      "wartendEnde": 0,
+      "opacityUnter1": [],
+      "axeSeriousCritical": [],
+      "sichtbarAberTransparentNachEnd": 0
+    },
+    {
+      "breite": 1440,
+      "seite": "/index.html",
+      "webdriver": false,
+      "wartendStart": 20,
+      "gesamt": 20,
+      "wartendEnde": 0,
+      "opacityUnter1": [],
+      "axeSeriousCritical": [],
+      "sichtbarAberTransparentNachEnd": 0
+    },
+    {
+      "breite": 1440,
+      "seite": "/leistungen.html",
+      "webdriver": false,
+      "wartendStart": 16,
+      "gesamt": 18,
+      "wartendEnde": 0,
+      "opacityUnter1": [],
+      "axeSeriousCritical": [],
+      "sichtbarAberTransparentNachEnd": 0
+    },
+    {
+      "breite": 1440,
+      "seite": "/arbeiten.html",
+      "webdriver": false,
+      "wartendStart": 10,
+      "gesamt": 12,
+      "wartendEnde": 0,
+      "opacityUnter1": [],
+      "axeSeriousCritical": [],
+      "sichtbarAberTransparentNachEnd": 0
+    },
+    {
+      "breite": 1440,
+      "seite": "/ueber-uns.html",
+      "webdriver": false,
+      "wartendStart": 12,
+      "gesamt": 12,
+      "wartendEnde": 0,
+      "opacityUnter1": [],
+      "axeSeriousCritical": [],
+      "sichtbarAberTransparentNachEnd": 0
+    },
+    {
+      "breite": 1440,
+      "seite": "/kontakt.html",
+      "webdriver": false,
+      "wartendStart": 2,
+      "gesamt": 2,
+      "wartendEnde": 0,
+      "opacityUnter1": [],
+      "axeSeriousCritical": [],
+      "sichtbarAberTransparentNachEnd": 0
+    },
+    {
+      "breite": 1440,
+      "seite": "/danke.html",
+      "webdriver": false,
+      "wartendStart": 0,
+      "gesamt": 0,
+      "wartendEnde": 0,
+      "opacityUnter1": [],
+      "axeSeriousCritical": [],
+      "sichtbarAberTransparentNachEnd": 0
+    },
+    {
+      "breite": 1440,
+      "seite": "/impressum.html",
+      "webdriver": false,
+      "wartendStart": 0,
+      "gesamt": 0,
+      "wartendEnde": 0,
+      "opacityUnter1": [],
+      "axeSeriousCritical": [],
+      "sichtbarAberTransparentNachEnd": 0
+    },
+    {
+      "breite": 1440,
+      "seite": "/datenschutz.html",
+      "webdriver": false,
+      "wartendStart": 0,
+      "gesamt": 0,
+      "wartendEnde": 0,
+      "opacityUnter1": [],
+      "axeSeriousCritical": [],
+      "sichtbarAberTransparentNachEnd": 0
+    },
+    {
+      "breite": 1440,
+      "seite": "/404.html",
+      "webdriver": false,
+      "wartendStart": 0,
+      "gesamt": 0,
+      "wartendEnde": 0,
+      "opacityUnter1": [],
+      "axeSeriousCritical": [],
+      "sichtbarAberTransparentNachEnd": 0
+    }
+  ]
+}

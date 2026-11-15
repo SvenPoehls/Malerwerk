@@ -1,0 +1,74 @@
+[
+  {
+    "seite": "/index.html",
+    "status": 200,
+    "externeAnfragen": [],
+    "konsolenfehler": [],
+    "barrierefreiheit": [],
+    "kaputteLinks": []
+  },
+  {
+    "seite": "/leistungen.html",
+    "status": 200,
+    "externeAnfragen": [],
+    "konsolenfehler": [],
+    "barrierefreiheit": [],
+    "kaputteLinks": []
+  },
+  {
+    "seite": "/arbeiten.html",
+    "status": 200,
+    "externeAnfragen": [],
+    "konsolenfehler": [],
+    "barrierefreiheit": [],
+    "kaputteLinks": []
+  },
+  {
+    "seite": "/ueber-uns.html",
+    "status": 200,
+    "externeAnfragen": [],
+    "konsolenfehler": [],
+    "barrierefreiheit": [],
+    "kaputteLinks": []
+  },
+  {
+    "seite": "/kontakt.html",
+    "status": 200,
+    "externeAnfragen": [],
+    "konsolenfehler": [],
+    "barrierefreiheit": [],
+    "kaputteLinks": []
+  },
+  {
+    "seite": "/danke.html",
+    "status": 200,
+    "externeAnfragen": [],
+    "konsolenfehler": [],
+    "barrierefreiheit": [],
+    "kaputteLinks": []
+  },
+  {
+    "seite": "/impressum.html",
+    "status": 200,
+    "externeAnfragen": [],
+    "konsolenfehler": [],
+    "barrierefreiheit": [],
+    "kaputteLinks": []
+  },
+  {
+    "seite": "/datenschutz.html",
+    "status": 200,
+    "externeAnfragen": [],
+    "konsolenfehler": [],
+    "barrierefreiheit": [],
+    "kaputteLinks": []
+  },
+  {
+    "seite": "/404.html",
+    "status": 200,
+    "externeAnfragen": [],
+    "konsolenfehler": [],
+    "barrierefreiheit": [],
+    "kaputteLinks": []
+  }
+]
