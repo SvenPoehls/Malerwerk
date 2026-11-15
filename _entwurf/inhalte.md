@@ -125,7 +125,7 @@ Steht am Ende von Startseite, Leistungen, Arbeiten und Über uns. Die H2 und der
 ### 2.1 Hero – „Musterfläche“
 - Etikett: Malerbetrieb in Musterstadt
 - H1: Streichen, tapezieren, lackieren – in Musterstadt
-- Lead: Malerwerk übernimmt Malerarbeiten in Wohnungen, Häusern und an Fassaden in Musterstadt und Umgebung. Wir sehen uns Ihre Räume vor Ort an und schicken Ihnen danach ein schriftliches Angebot. Bevor gestrichen wird, decken wir ab und kleben ab.
+- Lead: Malerwerk übernimmt Malerarbeiten in Wohnungen, Häusern und an Fassaden in Musterstadt und Umgebung. Wir sehen uns Ihre Räume vor Ort an und schicken Ihnen danach ein schriftliches Angebot. Bevor gestrichen wird, schützen wir Böden und Möbel. *(Runde 3, Prüfung Design P3-9)*
 - Button primär: Anfrage senden → `kontakt.html#anfrage`
 - Button sekundär: Anrufen: [PLATZHALTER: Telefonnummer] → `tel:`
 - Zeile darunter (`--text-sm`, Umbra 70): [PLATZHALTER: Alleinstellungsmerkmal in einem Satz, z.&nbsp;B. Meisterbetrieb oder Gründungsjahr – nur wenn belegt]
@@ -157,7 +157,7 @@ Steht am Ende von Startseite, Leistungen, Arbeiten und Über uns. Die H2 und der
   1. 01 · H3: Anfrage – Text: Sie schreiben uns über das Formular oder rufen an und schildern kurz, was gemacht werden soll.
   2. 02 · H3: Rückruf und Besichtigung – Text: Wir melden uns, klären offene Fragen und sehen uns Räume oder Fassade bei Ihnen vor Ort an.
   3. 03 · H3: Schriftliches Angebot – Text: Sie erhalten ein schriftliches Angebot mit allen besprochenen Arbeiten und entscheiden in Ruhe.
-  4. 04 · H3: Ausführung – Text: Wir decken ab, bereiten den Untergrund vor, streichen und räumen danach wieder auf.
+  4. 04 · H3: Ausführung – Text: Wir bereiten den Untergrund vor, streichen, tapezieren oder lackieren und räumen danach auf. *(Runde 3, Prüfung Design P3-9)*
   5. 05 · H3: Abnahme – Text: Zum Schluss gehen wir gemeinsam durch die Räume und sehen uns das Ergebnis an.
 - [Builder: Fünf Bänder; Farbfolge Kalk → Grünerde hell → Grünerde hell → Grünerde → Umbra oder nach Briefing verteilen.]
 

@@ -162,13 +162,26 @@
   if (versand && params.get('status') === 'fehler') versand.hidden = false;
 
   // Serverseitig gemeldete Fehler (kontakt.php): Zusammenfassung bzw. Versandfehler fokussieren,
-  // damit Screenreader und Tastatur direkt bei der Meldung landen.
+  // damit Screenreader und Tastatur direkt bei der Meldung landen. Der Fokus wird erst nach dem
+  // Laden gesetzt: Die Seite wird unter kontakt.php#anfrage ausgegeben, und der Browser setzt beim
+  // Sprung zum Fragment den Fokus sonst wieder auf das Dokument zurück.
+  var fokussiereMeldung = function (el) {
+    var los = function () {
+      window.setTimeout(function () {
+        el.focus();
+        // Zweite Absicherung, falls der Fragment-Sprung erst nach dem load-Ereignis erfolgt
+        window.setTimeout(function () { if (document.activeElement !== el) el.focus(); }, 150);
+      }, 0);
+    };
+    if (document.readyState === 'complete') los();
+    else window.addEventListener('load', los);
+  };
   var vorhanden = document.getElementById('fehler-zusammenfassung');
   if (vorhanden && !vorhanden.hidden) {
-    vorhanden.focus();
+    fokussiereMeldung(vorhanden);
   } else if (versand && !versand.hidden) {
     versand.tabIndex = -1;
-    versand.focus();
+    fokussiereMeldung(versand);
   }
 
   formular.noValidate = true; // eigene, verständliche Meldungen statt Browser-Blasen
@@ -221,10 +234,10 @@
     var tel = wert(telefon);
     var mail = wert(email);
     var telFehler = tel && !(TEL_MUSTER.test(tel) && /\d{3,}/.test(tel.replace(/\D/g, '')))
-      ? 'Bitte geben Sie eine gültige Telefonnummer an – nur Ziffern, Leerzeichen und die Zeichen + ( ) / -.' : '';
+      ? 'Bitte geben Sie eine gültige Telefonnummer an\u00A0– nur Ziffern, Leerzeichen und die Zeichen + ( ) / -.' : '';
     var mailFehler = mail && !MAIL_MUSTER.test(mail)
-      ? 'Bitte geben Sie eine gültige E-Mail-Adresse an, zum Beispiel name@beispiel.de.' : '';
-    var gruppenFehler = !tel && !mail ? 'Bitte geben Sie eine Telefonnummer oder eine E-Mail-Adresse an.' : '';
+      ? 'Bitte geben Sie eine gültige E-\u2060Mail-Adresse an, zum Beispiel name@beispiel.de.' : '';
+    var gruppenFehler = !tel && !mail ? 'Bitte geben Sie eine Telefonnummer oder eine E-\u2060Mail-Adresse an.' : '';
 
     // Gruppenfehler an beiden Feldern bekanntgeben
     var gp = feld('f-erreichbar-fehler');

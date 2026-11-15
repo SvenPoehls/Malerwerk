@@ -37,6 +37,15 @@ RedirectMatch 404 ^/(_entwurf|material|node_modules)(/|$)
 #   RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 # </IfModule>
 
+# HSTS: Browser merken sich, die Seite nur noch per HTTPS aufzurufen.
+# Erst aktivieren, wenn HTTPS dauerhaft und fehlerfrei läuft (inkl. aller Subdomains,
+# falls „includeSubDomains“ gesetzt wird). Zum Testen mit kurzer Dauer beginnen
+# (max-age=300), danach auf ein Jahr (31536000) erhöhen. Rückgängig machen ist nur
+# mit max-age=0 und erneutem Aufruf möglich.
+# <IfModule mod_headers.c>
+#   Header always set Strict-Transport-Security "max-age=31536000" "expr=%{HTTPS} == 'on'"
+# </IfModule>
+
 # Sicherheits-Header
 <IfModule mod_headers.c>
   Header always set X-Content-Type-Options "nosniff"

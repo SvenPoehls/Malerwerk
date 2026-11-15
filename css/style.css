@@ -9,8 +9,8 @@
   font-family: "Archivo";
   src: url("../assets/fonts/archivo-latin-wdth.woff2") format("woff2-variations"),
        url("../assets/fonts/archivo-latin-wdth.woff2") format("woff2");
-  font-weight: 100 900;
-  font-stretch: 62% 125%;
+  font-weight: 400 700;
+  font-stretch: 100% 125%;
   font-style: normal;
   font-display: swap;
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
@@ -113,6 +113,11 @@ html {
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
   scroll-padding-top: calc(var(--kopf-hoehe) + var(--space-4));
+}
+/* Unter 1024 px liegt die feste Aktionsleiste am unteren Rand: Beim Tabben, bei Sprunglinks und
+   bei focus()/scrollIntoView() hält der Browser diesen Bereich frei, damit nichts darunter verschwindet. */
+@media (max-width: 1023.98px) {
+  html { scroll-padding-bottom: calc(var(--aktionsleiste-hoehe) + env(safe-area-inset-bottom, 0px) + var(--space-3)); }
 }
 
 body {
@@ -244,7 +249,9 @@ ul, ol { margin: 0; padding: 0; }
   font-stretch: 100%;
   letter-spacing: 0;
   text-transform: none;
+  hyphens: manual;
 }
+.platzhalter--kurz { white-space: nowrap; }
 .sektion--leinen .platzhalter,
 .fuss .platzhalter { background: var(--farbe-kalk); }
 :is(h1, h2, h3) .platzhalter { font-weight: inherit; font-size: 0.8em; }
@@ -553,8 +560,10 @@ ul, ol { margin: 0; padding: 0; }
 .sv-hero { --sv: 4 / 3; }
 .sv-quer { --sv: 4 / 3; }
 @media (min-width: 768px) {
-  .sv-hero { --sv: 4 / 5; }
   .sv-quer { --sv: 21 / 9; }
+}
+@media (min-width: 1024px) {
+  .sv-hero { --sv: 4 / 5; } /* Tablet bleibt bei 4:3, sonst wird das Bild fast 750 px hoch */
 }
 
 .motiv__flaeche,
@@ -635,6 +644,11 @@ ul, ol { margin: 0; padding: 0; }
   .nur-mobil { display: none; }
   .ab-tablet { display: inline; }
 }
+.ab-desktop { display: none; }
+@media (min-width: 1024px) {
+  .bis-desktop { display: none; }
+  .ab-desktop { display: inline; }
+}
 
 /* ---------- Reveal-Animationen (nur mit JS) ---------- */
 .js .reveal.ist-wartend {
@@ -658,7 +672,7 @@ ul, ol { margin: 0; padding: 0; }
 /* ==========================================================================
    Startseite
    ========================================================================== */
-.hero { padding-block: var(--space-6) var(--section-y); overflow: clip; }
+.hero { padding-block: var(--space-6) var(--section-y-kompakt); overflow: clip; }
 .hero__raster { align-items: center; row-gap: var(--space-6); }
 .hero h1 { font-size: var(--text-5xl); }
 .hero__lead { margin-top: var(--space-4); max-width: 48ch; }
@@ -687,7 +701,7 @@ ul, ol { margin: 0; padding: 0; }
 
 @media (min-width: 768px) {
   .hero__text { grid-column: 1 / span 6; }
-  .hero__bild { grid-column: 2 / -1; }
+  .hero__bild { grid-column: 3 / -1; }
 }
 @media (min-width: 1024px) {
   .hero { padding-top: var(--space-8); }
@@ -797,20 +811,19 @@ ul, ol { margin: 0; padding: 0; }
   .sorgfalt { padding-bottom: var(--section-y-kompakt); }
   .sorgfalt__raster { row-gap: 0; }
   .sorgfalt__raster > .motiv { grid-column: 1 / -1; grid-row: 1; }
-  .sorgfalt__panel .fluss { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-5); }
-  .sorgfalt__panel .fluss > * + * { margin-top: 0; }
+  /* Panel Sp. 1–6, überlappt die untere Bildkante um --space-7 (Briefing); Text einspaltig */
   .sorgfalt__panel {
-    grid-column: 1 / span 9;
+    grid-column: 1 / span 6;
     grid-row: 2;
     position: relative;
     z-index: 1;
-    margin-top: calc(var(--space-9) * -1);
+    margin-top: calc(var(--space-7) * -1);
     padding: var(--space-6) var(--space-6) 0;
     background: var(--farbe-kalk);
   }
-}
-@media (min-width: 1280px) {
-  .sorgfalt__panel { grid-column: 1 / span 8; }
+  .sorgfalt__panel .fluss { max-width: var(--measure); }
+  /* Motivzeile rechts unten – der Bereich neben dem Panel bleibt frei */
+  .sorgfalt .motiv__fuss { justify-content: flex-end; text-align: right; }
 }
 
 /* Arbeiten-Vorschau */
@@ -840,7 +853,8 @@ ul, ol { margin: 0; padding: 0; }
   margin-top: var(--space-4);
   font-weight: 600;
 }
-.ortsliste li + li::before { content: "·"; margin-right: var(--space-2); }
+/* Trenner hängt am Ende des vorherigen Eintrags, damit er beim Umbruch nicht allein am Zeilenanfang steht */
+.ortsliste li:not(:last-child)::after { content: "·"; margin-left: var(--space-2); }
 .gebiet__ort {
   display: flex;
   align-items: center;
@@ -881,6 +895,12 @@ ul, ol { margin: 0; padding: 0; }
 .abschluss__zeit { margin-top: var(--space-1); font-size: var(--text-sm); color: var(--farbe-gruenerde-hell); }
 .abschluss__aktion .knopfreihe { margin-top: var(--space-4); }
 .abschluss .knopf { min-height: 3.5rem; }
+@media (max-width: 479px) {
+  .abschluss .knopfreihe,
+  .wand__kalk .knopfreihe { flex-direction: column; align-items: stretch; }
+  .abschluss .knopf,
+  .wand__kalk .knopf { width: 100%; }
+}
 @media (min-width: 768px) {
   .abschluss__frage { grid-column: 1 / span 4; }
   .abschluss__aktion { grid-column: 1 / span 6; }
@@ -966,6 +986,7 @@ ul, ol { margin: 0; padding: 0; }
   width: 100%;
   height: 100%;
   align-items: center;
+  align-content: start;
   gap: var(--space-1) var(--space-2);
   min-height: var(--klickflaeche);
   padding: var(--space-2) var(--space-3);
@@ -980,7 +1001,11 @@ ul, ol { margin: 0; padding: 0; }
 .sprungleiste a:active { transform: translateY(1px); color: var(--farbe-rot-dunkel); }
 .sprungleiste .etikett__feld { width: var(--etikett-feld); height: var(--etikett-feld); }
 .sprungleiste__code { font-size: var(--text-xs); font-weight: 600; font-stretch: 125%; letter-spacing: 0.08em; color: var(--farbe-umbra-70); white-space: nowrap; }
-.sprungleiste__name { grid-column: 1 / -1; }
+.sprungleiste__name { grid-column: 1 / -1; hyphens: manual; }
+@media (max-width: 479px) {
+  .sprungleiste a { padding-inline: var(--space-2); }
+  .sprungleiste__name { font-size: var(--text-xs); }
+}
 
 /* Leistungsabschnitte */
 .leistung { scroll-margin-top: calc(var(--kopf-hoehe) + var(--space-4)); }
@@ -1001,13 +1026,16 @@ ul, ol { margin: 0; padding: 0; }
 .sektion--gruen .hakenliste .icon { color: var(--farbe-kalk); }
 
 @media (min-width: 768px) {
-  .leistung__bild { grid-column: 1 / span 6; }
-  .leistung__text { grid-column: 1 / span 6; }
+  /* Tablet: Bild und Text nebeneinander (je 3 von 6 Spalten), Bild oben bündig mit der H2 */
+  .leistung__raster { align-items: start; }
+  .leistung__bild { grid-column: 1 / span 3; grid-row: 1; margin-top: calc(var(--text-xs) * 1.3 + var(--space-3)); }
+  .leistung__text { grid-column: 4 / span 3; grid-row: 1; }
+  .leistung--gespiegelt .leistung__bild { grid-column: 4 / span 3; }
+  .leistung--gespiegelt .leistung__text { grid-column: 1 / span 3; }
+  .leistung--muster .leistung__text { grid-column: 1 / -1; } /* Musterkarte folgt darunter in voller Breite */
 }
 @media (min-width: 1024px) {
-  .leistung__raster { align-items: start; }
   /* Bild beginnt auf Höhe der H2 (unter dem Etikett) */
-  .leistung__bild { margin-top: calc(var(--text-xs) * 1.3 + var(--space-3)); }
   .leistung__bild { grid-column: 1 / span 6; grid-row: 1; }
   .leistung__text { grid-column: 8 / span 5; grid-row: 1; }
   .leistung--gespiegelt .leistung__bild { grid-column: 7 / span 6; }
@@ -1086,6 +1114,9 @@ ul, ol { margin: 0; padding: 0; }
 @media (min-width: 768px) {
   .datenblatt--quer dl { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: var(--space-4); }
 }
+@media (min-width: 768px) and (max-width: 1023.98px) {
+  .datenblatt--quer dl > div:nth-last-child(-n+2) { border-bottom: 0; }
+}
 @media (min-width: 1024px) {
   .projekt1__bild { grid-column: 1 / span 8; }
   .projekt1__info { grid-column: 9 / span 4; }
@@ -1098,6 +1129,9 @@ ul, ol { margin: 0; padding: 0; }
 .paar { display: grid; gap: var(--grid-gap); grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: var(--space-4); }
 @media (max-width: 479px) {
   .paar { gap: var(--space-3); }
+}
+@media (min-width: 1024px) {
+  .paar { width: calc(100% * 10 / 12); } /* Sp. 1–10: Platzhalterpaar weniger dominant; Seitenverhältnis bleibt */
 }
 .projekt2__unten { margin-top: var(--space-5); display: grid; gap: var(--space-5); }
 .projekt2__unten .projekt__text { margin-top: 0; max-width: var(--measure); }
@@ -1343,9 +1377,6 @@ ul, ol { margin: 0; padding: 0; }
   .toc { grid-column: 9 / span 4; grid-row: 1 / span 2; position: sticky; top: calc(var(--kopf-hoehe) + var(--space-5)); align-self: start; margin-bottom: 0; }
   .toc a { min-height: 2rem; }
 }
-@media (min-width: 1280px) {
-  .toc { grid-column: 8 / span 4; }
-}
 
 /* 404 – „Unfertige Wand“ */
 .wand { display: grid; min-height: 60vh; }
@@ -1396,9 +1427,6 @@ ul, ol { margin: 0; padding: 0; }
 .ueber__lead { margin-top: var(--space-4); }
 .knopf > span { min-width: 0; }
 .sektion--umbra .platzhalter { background: var(--farbe-leinen); }
-@media (min-width: 1024px) {
-  .sorgfalt .motiv__fuss { justify-content: flex-end; text-align: right; }
-}
 @media (max-width: 767px) {
   .fuss__seiten,
   .fuss__recht { grid-column: span 2; }

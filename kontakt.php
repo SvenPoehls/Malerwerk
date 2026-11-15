@@ -66,7 +66,7 @@ $werte = [
 
 // Honeypot: Bots füllen das versteckte Feld – still annehmen, nichts senden.
 if (feld('website') !== '') {
-    weiterleiten('danke.html');
+    weiterleiten('danke.html#inhalt');
 }
 
 // ---------- Serverseitige Prüfung ----------
@@ -90,13 +90,13 @@ $emailOk = $werte['email'] === '' || (
 );
 
 if ($werte['telefon'] === '' && $werte['email'] === '') {
-    $fehler['f-erreichbar'] = 'Bitte geben Sie eine Telefonnummer oder eine E-Mail-Adresse an.';
+    $fehler['f-erreichbar'] = "Bitte geben Sie eine Telefonnummer oder eine E-\u{2060}Mail-Adresse an.";
 }
 if (!$telefonOk) {
-    $fehler['f-telefon'] = 'Bitte geben Sie eine gültige Telefonnummer an – nur Ziffern, Leerzeichen und die Zeichen + ( ) / -.';
+    $fehler['f-telefon'] = "Bitte geben Sie eine gültige Telefonnummer an\u{00A0}– nur Ziffern, Leerzeichen und die Zeichen + ( ) / -.";
 }
 if (!$emailOk) {
-    $fehler['f-email'] = 'Bitte geben Sie eine gültige E-Mail-Adresse an, zum Beispiel name@beispiel.de.';
+    $fehler['f-email'] = "Bitte geben Sie eine gültige E-\u{2060}Mail-Adresse an, zum Beispiel name@beispiel.de.";
 }
 if (mb_strlen($werte['ort']) > $max['ort']) {
     $fehler['f-ort'] = 'Bitte kürzen Sie die Ortsangabe.';
@@ -176,7 +176,7 @@ if (filter_var($empfaenger, FILTER_VALIDATE_EMAIL) !== false) {
 }
 
 if ($versandOk) {
-    weiterleiten('danke.html');
+    weiterleiten('danke.html#inhalt');
 }
 formularAusgeben($werte, [], true, 503);
 

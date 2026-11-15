@@ -11,7 +11,8 @@ const MAIL_LABEL = 'E-Mail schreiben an [PLATZHALTER: E-Mail-Adresse]';
 let B = ''; // Pfad-Präfix (404 nutzt "/" wegen beliebiger Aufruftiefe)
 
 // ---------- Bausteine ----------
-const ph = (t) => `<mark class="platzhalter">[PLATZHALTER: ${t}]</mark>`;
+// Kurze Platzhalter (z. B. PLZ, Ort, Jahr) brechen nicht um.
+const ph = (t) => `<mark class="platzhalter${t.replace(/&[a-z]+;/g, ' ').length <= 14 ? ' platzhalter--kurz' : ''}">[PLATZHALTER: ${t}]</mark>`;
 // In tel:-Linktexten geschützte Leerzeichen (Telefonnummern nicht umbrechen)
 const phTel = '<mark class="platzhalter">[PLATZHALTER:&nbsp;Telefonnummer]</mark>';
 const esc = (s) => s.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;');
@@ -39,7 +40,7 @@ const knopfAnrufen = (cls = '') => `<a class="knopf knopf--sekundaer${cls}" href
 
 const FORMAT = {
   '4-5': '4:5', '3-2': '3:2', '1-1': '1:1', '21-9': '21:9',
-  hero: '<span class="nur-mobil">4:3</span><span class="ab-tablet">4:5</span>',
+  hero: '<span class="bis-desktop">4:3</span><span class="ab-desktop">4:5</span>',
   quer: '<span class="nur-mobil">4:3</span><span class="ab-tablet">21:9</span>',
 };
 
@@ -105,7 +106,9 @@ const NAV = [
   ['kontakt', 'Kontakt'],
 ];
 
-const logo = () => `<a class="logo" href="${B}index.html" aria-label="Malerwerk – zur Startseite">${marke('logo__zeichen')}<span class="logo__wort">MALERWERK</span></a>`;
+// Startseite: „./“ bzw. „/“ (404) – deckt sich mit dem Canonical (Domain/), kein doppeltes index.html
+const START = () => (B ? '/' : './');
+const logo = () => `<a class="logo" href="${START()}" aria-label="Malerwerk – zur Startseite">${marke('logo__zeichen')}<span class="logo__wort">MALERWERK</span></a>`;
 
 function kopf(aktiv) {
   const links = NAV.map(([slug, name]) =>
@@ -141,7 +144,7 @@ function kopf(aktiv) {
 }
 
 function fuss(istKontakt = false) {
-  const seiten = [['index', 'Startseite'], ...NAV].map(([s, n]) => `<li><a href="${B}${s}.html">${n}</a></li>`).join('\n          ');
+  const seiten = [['index', 'Startseite'], ...NAV].map(([s, n]) => `<li><a href="${s === 'index' ? START() : `${B}${s}.html`}">${n}</a></li>`).join('\n          ');
   return `<footer class="fuss">
   <div class="container raster fuss__raster">
     <div class="fuss__marke">
@@ -204,14 +207,27 @@ function abschluss(h2, text) {
 </section>`;
 }
 
+// Typografie in Textknoten des Body (nicht in Attributen, Kommentaren oder Skripten):
+// – geschütztes Leerzeichen vor dem Halbgeviertstrich (kein Strich am Zeilenanfang),
+// – „E-Mail“ ohne Umbruch am Bindestrich (die Schrift enthält keinen geschützten Bindestrich U+2011).
+function typografie(html) {
+  return html.split(/(<!--[\s\S]*?-->|<[^>]+>)/).map((teil, i, alle) => {
+    if (i % 2 === 1) return teil;
+    const davor = alle[i - 1] || '';
+    let t = teil.replace(/ – /g, '&nbsp;– ');
+    if (!/class="kein-umbruch"/.test(davor)) t = t.replace(/E-Mail/g, '<span class="kein-umbruch">E-Mail</span>');
+    return t;
+  }).join('');
+}
+
 function seite(s, main) {
   return `${head(s)}
 <body>
-${kopf(s.aktiv)}
+${typografie(`${kopf(s.aktiv)}
 <main id="inhalt" tabindex="-1">
 ${main}
 </main>
-${fuss(s.aktiv === 'kontakt')}
+${fuss(s.aktiv === 'kontakt')}`)}
 </body>
 </html>
 `;
@@ -260,7 +276,7 @@ function startseite() {
     ['Anfrage', 'Sie schreiben uns über das Formular oder rufen an und schildern kurz, was gemacht werden soll.'],
     ['Rückruf und Besichtigung', 'Wir melden uns, klären offene Fragen und sehen uns Räume oder Fassade bei Ihnen vor Ort an.'],
     ['Schriftliches Angebot', 'Sie erhalten ein schriftliches Angebot mit allen besprochenen Arbeiten und entscheiden in Ruhe.'],
-    ['Ausführung', 'Wir decken ab, bereiten den Untergrund vor, streichen und räumen danach wieder auf.'],
+    ['Ausführung', 'Wir bereiten den Untergrund vor, streichen, tapezieren oder lackieren und räumen danach auf.'],
     ['Abnahme', 'Zum Schluss gehen wir gemeinsam durch die Räume und sehen uns das Ergebnis an.'],
   ].map(([t, s], i) => `<li class="ablauf__band band-${i + 1} kante reveal">
           <span class="ablauf__nummer" aria-hidden="true">0${i + 1}</span>
@@ -273,7 +289,7 @@ function startseite() {
     <div class="hero__text">
       ${etikett('Malerbetrieb in Musterstadt')}
       <h1 id="hero-titel">Streichen, tapezieren, lackieren&nbsp;– in&nbsp;Musterstadt</h1>
-      <p class="lead hero__lead">Malerwerk übernimmt Malerarbeiten in Wohnungen, Häusern und an Fassaden in Musterstadt und Umgebung. Wir sehen uns Ihre Räume vor Ort an und schicken Ihnen danach ein schriftliches Angebot. Bevor gestrichen wird, decken wir ab und kleben ab.</p>
+      <p class="lead hero__lead">Malerwerk übernimmt Malerarbeiten in Wohnungen, Häusern und an Fassaden in Musterstadt und Umgebung. Wir sehen uns Ihre Räume vor Ort an und schicken Ihnen danach ein schriftliches Angebot. Bevor gestrichen wird, schützen wir Böden und Möbel.</p>
       <div class="knopfreihe">
         ${knopfAnfrage()}
         <div class="hero__anruf">
@@ -877,7 +893,7 @@ function danke() {
     <p class="lead">Ihre Nachricht ist bei uns angekommen. Wir melden uns bei Ihnen per Telefon oder E-Mail, um Ihre Fragen zu klären und einen Termin zur Besichtigung zu vereinbaren.</p>
     <p>Ist es eilig? Dann rufen Sie uns gern an: <a class="tel" href="${TEL}">${phTel}</a>.</p>
     <div class="knopfreihe">
-      <a class="textlink" href="index.html">Zurück zur Startseite${pfeil()}</a>
+      <a class="textlink" href="./">Zurück zur Startseite${pfeil()}</a>
       <a class="textlink" href="leistungen.html">Leistungen ansehen${pfeil()}</a>
     </div>
   </div>
@@ -962,7 +978,7 @@ function impressum() {
 function datenschutz() {
   const toc = [
     ['verantwortlicher', 'Verantwortlicher'], ['ueberblick', 'Überblick'], ['hosting', 'Hosting und Server-Logfiles'],
-    ['kontaktformular', 'Kontaktformular'], ['kontakt', 'Kontakt per <span class="kein-umbruch">E-Mail</span> oder Telefon'], ['cookies', 'Keine Cookies, kein Tracking'],
+    ['kontaktformular', 'Kontaktformular'], ['kontakt', 'Kontakt per E-Mail oder Telefon'], ['cookies', 'Keine Cookies, kein Tracking'],
     ['schriften', 'Schriften und Icons'], ['externe-links', 'Links zu externen Diensten'], ['speicherdauer', 'Speicherdauer'],
     ['rechte', 'Ihre Rechte'], ['beschwerde', 'Beschwerderecht'], ['verschluesselung', 'Verschlüsselung'],
   ];
@@ -1026,7 +1042,7 @@ function datenschutz() {
         <p>Das Formular wird auf unserem eigenen Webspace verarbeitet und Ihre Angaben werden per E-Mail an uns weitergeleitet. Dabei werden keine externen Dienste eingesetzt. Zum Schutz vor automatisierten Spam-Nachrichten verwenden wir ein unsichtbares Prüffeld; dafür werden keine zusätzlichen Daten erhoben und keine Drittanbieter eingebunden.</p>
         <p>Wir nutzen Ihre Angaben ausschließlich, um Ihre Anfrage zu beantworten, einen Besichtigungstermin zu vereinbaren und gegebenenfalls ein Angebot zu erstellen. Eine Weitergabe an Dritte findet nicht statt. Rechtsgrundlage ist Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;b DSGVO (Durchführung vorvertraglicher Maßnahmen auf Ihre Anfrage hin) sowie Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;f DSGVO für allgemeine Anfragen; unser berechtigtes Interesse liegt in der Beantwortung Ihres Anliegens.</p>
 
-        <h2 id="kontakt">5. Kontakt per <span class="kein-umbruch">E-Mail</span> oder Telefon</h2>
+        <h2 id="kontakt">5. Kontakt per E-Mail oder Telefon</h2>
         <p>Wenn Sie uns per E-Mail schreiben oder anrufen, verarbeiten wir die Angaben, die Sie uns dabei mitteilen – etwa Ihren Namen, Ihre Kontaktdaten und Ihr Anliegen –, um Ihre Anfrage zu bearbeiten. Die Rechtsgrundlagen sind dieselben wie beim Kontaktformular (Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;b bzw. lit.&nbsp;f DSGVO). Für E-Mails nutzen wir ${ph('E-Mail-Anbieter bzw. Postfach beim Hoster')}.</p>
 
         <h2 id="cookies">6. Keine Cookies, kein Tracking</h2>
@@ -1079,7 +1095,7 @@ function datenschutz() {
 // =====================================================================
 function fehler404() {
   B = '/';
-  const links = [['index', 'Startseite'], ...NAV].map(([s, n]) => `<li><a href="/${s}.html">${n}</a></li>`).join('\n          ');
+  const links = [['index', 'Startseite'], ...NAV].map(([s, n]) => `<li><a href="${s === 'index' ? '/' : `/${s}.html`}">${n}</a></li>`).join('\n          ');
   const main = `<div class="wand">
   <div class="wand__gruen">
     <p class="wand__zahl" aria-hidden="true">404</p>
