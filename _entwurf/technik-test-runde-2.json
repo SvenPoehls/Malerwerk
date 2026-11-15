@@ -1,0 +1,1026 @@
+{
+  "horizontal": [
+    {
+      "seite": "/index.html",
+      "breite": 360,
+      "scrollW": 360,
+      "clientW": 360,
+      "ok": true
+    },
+    {
+      "seite": "/leistungen.html",
+      "breite": 360,
+      "scrollW": 360,
+      "clientW": 360,
+      "ok": true
+    },
+    {
+      "seite": "/arbeiten.html",
+      "breite": 360,
+      "scrollW": 360,
+      "clientW": 360,
+      "ok": true
+    },
+    {
+      "seite": "/ueber-uns.html",
+      "breite": 360,
+      "scrollW": 360,
+      "clientW": 360,
+      "ok": true
+    },
+    {
+      "seite": "/kontakt.html",
+      "breite": 360,
+      "scrollW": 360,
+      "clientW": 360,
+      "ok": true
+    },
+    {
+      "seite": "/danke.html",
+      "breite": 360,
+      "scrollW": 360,
+      "clientW": 360,
+      "ok": true
+    },
+    {
+      "seite": "/impressum.html",
+      "breite": 360,
+      "scrollW": 360,
+      "clientW": 360,
+      "ok": true
+    },
+    {
+      "seite": "/datenschutz.html",
+      "breite": 360,
+      "scrollW": 360,
+      "clientW": 360,
+      "ok": true
+    },
+    {
+      "seite": "/404.html",
+      "breite": 360,
+      "scrollW": 360,
+      "clientW": 360,
+      "ok": true
+    },
+    {
+      "seite": "/index.html",
+      "breite": 768,
+      "scrollW": 768,
+      "clientW": 768,
+      "ok": true
+    },
+    {
+      "seite": "/leistungen.html",
+      "breite": 768,
+      "scrollW": 768,
+      "clientW": 768,
+      "ok": true
+    },
+    {
+      "seite": "/arbeiten.html",
+      "breite": 768,
+      "scrollW": 768,
+      "clientW": 768,
+      "ok": true
+    },
+    {
+      "seite": "/ueber-uns.html",
+      "breite": 768,
+      "scrollW": 768,
+      "clientW": 768,
+      "ok": true
+    },
+    {
+      "seite": "/kontakt.html",
+      "breite": 768,
+      "scrollW": 768,
+      "clientW": 768,
+      "ok": true
+    },
+    {
+      "seite": "/danke.html",
+      "breite": 768,
+      "scrollW": 768,
+      "clientW": 768,
+      "ok": true
+    },
+    {
+      "seite": "/impressum.html",
+      "breite": 768,
+      "scrollW": 768,
+      "clientW": 768,
+      "ok": true
+    },
+    {
+      "seite": "/datenschutz.html",
+      "breite": 768,
+      "scrollW": 768,
+      "clientW": 768,
+      "ok": true
+    },
+    {
+      "seite": "/404.html",
+      "breite": 768,
+      "scrollW": 768,
+      "clientW": 768,
+      "ok": true
+    },
+    {
+      "seite": "/index.html",
+      "breite": 1440,
+      "scrollW": 1440,
+      "clientW": 1440,
+      "ok": true
+    },
+    {
+      "seite": "/leistungen.html",
+      "breite": 1440,
+      "scrollW": 1440,
+      "clientW": 1440,
+      "ok": true
+    },
+    {
+      "seite": "/arbeiten.html",
+      "breite": 1440,
+      "scrollW": 1440,
+      "clientW": 1440,
+      "ok": true
+    },
+    {
+      "seite": "/ueber-uns.html",
+      "breite": 1440,
+      "scrollW": 1440,
+      "clientW": 1440,
+      "ok": true
+    },
+    {
+      "seite": "/kontakt.html",
+      "breite": 1440,
+      "scrollW": 1440,
+      "clientW": 1440,
+      "ok": true
+    },
+    {
+      "seite": "/danke.html",
+      "breite": 1440,
+      "scrollW": 1440,
+      "clientW": 1440,
+      "ok": true
+    },
+    {
+      "seite": "/impressum.html",
+      "breite": 1440,
+      "scrollW": 1440,
+      "clientW": 1440,
+      "ok": true
+    },
+    {
+      "seite": "/datenschutz.html",
+      "breite": 1440,
+      "scrollW": 1440,
+      "clientW": 1440,
+      "ok": true
+    },
+    {
+      "seite": "/404.html",
+      "breite": 1440,
+      "scrollW": 1440,
+      "clientW": 1440,
+      "ok": true
+    }
+  ],
+  "ueberstand": [
+    {
+      "seite": "/kontakt.html",
+      "breite": 360,
+      "elemente": [
+        ".honig [-360..-359]"
+      ]
+    },
+    {
+      "seite": "/kontakt.html",
+      "breite": 768,
+      "elemente": [
+        ".honig [-768..-767]"
+      ]
+    },
+    {
+      "seite": "/kontakt.html",
+      "breite": 1440,
+      "elemente": [
+        ".honig [-1440..-1439]"
+      ]
+    }
+  ],
+  "skip": [
+    {
+      "seite": "/index.html",
+      "breite": 360,
+      "skipText": "Zum Inhalt springen",
+      "skipSichtbar": false,
+      "skipRing": true,
+      "fokusNachEnter": "inhalt",
+      "naechsterStopp": "Anfrage senden",
+      "naechsterImInhalt": true
+    },
+    {
+      "seite": "/leistungen.html",
+      "breite": 360,
+      "skipText": "Zum Inhalt springen",
+      "skipSichtbar": false,
+      "skipRing": true,
+      "fokusNachEnter": "inhalt",
+      "naechsterStopp": "MW-01 Innenanstrich",
+      "naechsterImInhalt": true
+    },
+    {
+      "seite": "/arbeiten.html",
+      "breite": 360,
+      "skipText": "Zum Inhalt springen",
+      "skipSichtbar": false,
+      "skipRing": true,
+      "fokusNachEnter": "inhalt",
+      "naechsterStopp": "Anrufen: [PLATZHALTER: Telefonnummer]",
+      "naechsterImInhalt": true
+    },
+    {
+      "seite": "/ueber-uns.html",
+      "breite": 360,
+      "skipText": "Zum Inhalt springen",
+      "skipSichtbar": false,
+      "skipRing": true,
+      "fokusNachEnter": "inhalt",
+      "naechsterStopp": "Anfrage für Ihren Ort senden",
+      "naechsterImInhalt": true
+    },
+    {
+      "seite": "/kontakt.html",
+      "breite": 360,
+      "skipText": "Zum Inhalt springen",
+      "skipSichtbar": false,
+      "skipRing": true,
+      "fokusNachEnter": "inhalt",
+      "naechsterStopp": "Anrufen: [PLATZHALTER: Telefonnummer]",
+      "naechsterImInhalt": true
+    },
+    {
+      "seite": "/danke.html",
+      "breite": 360,
+      "skipText": "Zum Inhalt springen",
+      "skipSichtbar": false,
+      "skipRing": true,
+      "fokusNachEnter": "inhalt",
+      "naechsterStopp": "[PLATZHALTER: Telefonnummer]",
+      "naechsterImInhalt": true
+    },
+    {
+      "seite": "/impressum.html",
+      "breite": 360,
+      "skipText": "Zum Inhalt springen",
+      "skipSichtbar": false,
+      "skipRing": true,
+      "fokusNachEnter": "inhalt",
+      "naechsterStopp": "[PLATZHALTER: Telefonnummer]",
+      "naechsterImInhalt": true
+    },
+    {
+      "seite": "/datenschutz.html",
+      "breite": 360,
+      "skipText": "Zum Inhalt springen",
+      "skipSichtbar": false,
+      "skipRing": true,
+      "fokusNachEnter": "inhalt",
+      "naechsterStopp": "1.Verantwortlicher",
+      "naechsterImInhalt": true
+    },
+    {
+      "seite": "/404.html",
+      "breite": 360,
+      "skipText": "Zum Inhalt springen",
+      "skipSichtbar": false,
+      "skipRing": true,
+      "fokusNachEnter": "inhalt",
+      "naechsterStopp": "Startseite",
+      "naechsterImInhalt": true
+    },
+    {
+      "seite": "/index.html",
+      "breite": 1440,
+      "skipText": "Zum Inhalt springen",
+      "skipSichtbar": false,
+      "skipRing": true,
+      "fokusNachEnter": "inhalt",
+      "naechsterStopp": "Anfrage senden",
+      "naechsterImInhalt": true
+    },
+    {
+      "seite": "/leistungen.html",
+      "breite": 1440,
+      "skipText": "Zum Inhalt springen",
+      "skipSichtbar": false,
+      "skipRing": true,
+      "fokusNachEnter": "inhalt",
+      "naechsterStopp": "MW-01 Innenanstrich",
+      "naechsterImInhalt": true
+    },
+    {
+      "seite": "/arbeiten.html",
+      "breite": 1440,
+      "skipText": "Zum Inhalt springen",
+      "skipSichtbar": false,
+      "skipRing": true,
+      "fokusNachEnter": "inhalt",
+      "naechsterStopp": "Anrufen: [PLATZHALTER: Telefonnummer]",
+      "naechsterImInhalt": true
+    },
+    {
+      "seite": "/ueber-uns.html",
+      "breite": 1440,
+      "skipText": "Zum Inhalt springen",
+      "skipSichtbar": false,
+      "skipRing": true,
+      "fokusNachEnter": "inhalt",
+      "naechsterStopp": "Anfrage für Ihren Ort senden",
+      "naechsterImInhalt": true
+    },
+    {
+      "seite": "/kontakt.html",
+      "breite": 1440,
+      "skipText": "Zum Inhalt springen",
+      "skipSichtbar": false,
+      "skipRing": true,
+      "fokusNachEnter": "inhalt",
+      "naechsterStopp": "Anrufen: [PLATZHALTER: Telefonnummer]",
+      "naechsterImInhalt": true
+    },
+    {
+      "seite": "/danke.html",
+      "breite": 1440,
+      "skipText": "Zum Inhalt springen",
+      "skipSichtbar": false,
+      "skipRing": true,
+      "fokusNachEnter": "inhalt",
+      "naechsterStopp": "[PLATZHALTER: Telefonnummer]",
+      "naechsterImInhalt": true
+    },
+    {
+      "seite": "/impressum.html",
+      "breite": 1440,
+      "skipText": "Zum Inhalt springen",
+      "skipSichtbar": false,
+      "skipRing": true,
+      "fokusNachEnter": "inhalt",
+      "naechsterStopp": "[PLATZHALTER: Telefonnummer]",
+      "naechsterImInhalt": true
+    },
+    {
+      "seite": "/datenschutz.html",
+      "breite": 1440,
+      "skipText": "Zum Inhalt springen",
+      "skipSichtbar": false,
+      "skipRing": true,
+      "fokusNachEnter": "inhalt",
+      "naechsterStopp": "1.Verantwortlicher",
+      "naechsterImInhalt": true
+    },
+    {
+      "seite": "/404.html",
+      "breite": 1440,
+      "skipText": "Zum Inhalt springen",
+      "skipSichtbar": false,
+      "skipRing": true,
+      "fokusNachEnter": "inhalt",
+      "naechsterStopp": "Startseite",
+      "naechsterImInhalt": true
+    }
+  ],
+  "navigation": [
+    {
+      "breite": 360,
+      "knopfPerTab": 3,
+      "linksBeiGeschlossenSichtbar": 0,
+      "naechsterNachKnopfGeschlossen": "MW-01 Innenanstrich",
+      "expandedNachEnter": "true",
+      "fokusNachOeffnen": "Leistungen",
+      "tabImMenue": [
+        "Arbeiten",
+        "Über uns",
+        "Kontakt",
+        "Anrufen",
+        "Anfrage senden",
+        "[KNOPF][AUSSERHALB]Schließen",
+        "Leistungen",
+        "Arbeiten",
+        "Über uns",
+        "Kontakt",
+        "Anrufen",
+        "Anfrage senden"
+      ],
+      "fokusFalle": true,
+      "shiftTab": "Anrufen",
+      "expandedNachEscape": "false",
+      "fokusNachEscape": true,
+      "expandedNachSpace": "true",
+      "urlNachLinkEnter": "/leistungen.html",
+      "axeMenueOffen": []
+    },
+    {
+      "breite": 768,
+      "knopfPerTab": 3,
+      "linksBeiGeschlossenSichtbar": 0,
+      "naechsterNachKnopfGeschlossen": "MW-01 Innenanstrich",
+      "expandedNachEnter": "true",
+      "fokusNachOeffnen": "Leistungen",
+      "tabImMenue": [
+        "Arbeiten",
+        "Über uns",
+        "Kontakt",
+        "Anrufen",
+        "Anfrage senden",
+        "[KNOPF][AUSSERHALB]Schließen",
+        "Leistungen",
+        "Arbeiten",
+        "Über uns",
+        "Kontakt",
+        "Anrufen",
+        "Anfrage senden"
+      ],
+      "fokusFalle": true,
+      "shiftTab": "Anrufen",
+      "expandedNachEscape": "false",
+      "fokusNachEscape": true,
+      "expandedNachSpace": "true",
+      "urlNachLinkEnter": "/leistungen.html",
+      "axeMenueOffen": []
+    },
+    {
+      "breite": 1440,
+      "ersteTabStopps": [
+        "Zum Inhalt springen",
+        "MALERWERK",
+        "Leistungen",
+        "Arbeiten",
+        "Über uns",
+        "Kontakt",
+        "[PLATZHALTER: Telefo",
+        "Anfrage senden",
+        "Anfrage senden"
+      ],
+      "menueKnopfSichtbar": false
+    }
+  ],
+  "fokus": [
+    {
+      "seite": "/index.html",
+      "breite": 360,
+      "tabStopps": 30,
+      "ohneRing": [],
+      "unsichtbar": []
+    },
+    {
+      "seite": "/leistungen.html",
+      "breite": 360,
+      "tabStopps": 10,
+      "ohneRing": [],
+      "unsichtbar": []
+    },
+    {
+      "seite": "/arbeiten.html",
+      "breite": 360,
+      "tabStopps": 18,
+      "ohneRing": [],
+      "unsichtbar": []
+    },
+    {
+      "seite": "/ueber-uns.html",
+      "breite": 360,
+      "tabStopps": 19,
+      "ohneRing": [],
+      "unsichtbar": []
+    },
+    {
+      "seite": "/kontakt.html",
+      "breite": 360,
+      "tabStopps": 28,
+      "ohneRing": [],
+      "unsichtbar": []
+    },
+    {
+      "seite": "/danke.html",
+      "breite": 360,
+      "tabStopps": 18,
+      "ohneRing": [],
+      "unsichtbar": []
+    },
+    {
+      "seite": "/impressum.html",
+      "breite": 360,
+      "tabStopps": 18,
+      "ohneRing": [],
+      "unsichtbar": []
+    },
+    {
+      "seite": "/datenschutz.html",
+      "breite": 360,
+      "tabStopps": 30,
+      "ohneRing": [],
+      "unsichtbar": []
+    },
+    {
+      "seite": "/404.html",
+      "breite": 360,
+      "tabStopps": 22,
+      "ohneRing": [],
+      "unsichtbar": []
+    },
+    {
+      "seite": "/index.html",
+      "breite": 1440,
+      "tabStopps": 33,
+      "ohneRing": [],
+      "unsichtbar": [
+        "A Zum Inhalt springen"
+      ]
+    },
+    {
+      "seite": "/leistungen.html",
+      "breite": 1440,
+      "tabStopps": 15,
+      "ohneRing": [],
+      "unsichtbar": []
+    },
+    {
+      "seite": "/arbeiten.html",
+      "breite": 1440,
+      "tabStopps": 21,
+      "ohneRing": [],
+      "unsichtbar": []
+    },
+    {
+      "seite": "/ueber-uns.html",
+      "breite": 1440,
+      "tabStopps": 22,
+      "ohneRing": [],
+      "unsichtbar": []
+    },
+    {
+      "seite": "/kontakt.html",
+      "breite": 1440,
+      "tabStopps": 31,
+      "ohneRing": [],
+      "unsichtbar": []
+    },
+    {
+      "seite": "/danke.html",
+      "breite": 1440,
+      "tabStopps": 21,
+      "ohneRing": [],
+      "unsichtbar": []
+    },
+    {
+      "seite": "/impressum.html",
+      "breite": 1440,
+      "tabStopps": 21,
+      "ohneRing": [],
+      "unsichtbar": []
+    },
+    {
+      "seite": "/datenschutz.html",
+      "breite": 1440,
+      "tabStopps": 33,
+      "ohneRing": [],
+      "unsichtbar": []
+    },
+    {
+      "seite": "/404.html",
+      "breite": 1440,
+      "tabStopps": 25,
+      "ohneRing": [],
+      "unsichtbar": []
+    }
+  ],
+  "verdeckt": [
+    {
+      "seite": "/index.html",
+      "breite": 360,
+      "anzahl": 4,
+      "beispiele": [
+        "A \"Tapezierarbeiten\" von aktionsleiste (top 744, bottom 766, vh 800)",
+        "A \"Malerwerk – zur Startseite\" von aktionsleiste (top 756, bottom 800, vh 800)",
+        "A \"Arbeiten\" von aktionsleiste (top 718, bottom 762, vh 800)",
+        "A \"Über uns\" von aktionsleiste (top 756, bottom 800, vh 800)"
+      ]
+    },
+    {
+      "seite": "/arbeiten.html",
+      "breite": 360,
+      "anzahl": 3,
+      "beispiele": [
+        "A \"Malerwerk – zur Startseite\" von aktionsleiste (top 756, bottom 800, vh 800)",
+        "A \"Arbeiten\" von aktionsleiste (top 718, bottom 762, vh 800)",
+        "A \"Über uns\" von aktionsleiste (top 756, bottom 800, vh 800)"
+      ]
+    },
+    {
+      "seite": "/ueber-uns.html",
+      "breite": 360,
+      "anzahl": 3,
+      "beispiele": [
+        "A \"Anrufen: [PLATZHALTER: Telefonnummer]\" von aktionsleiste (top 739, bottom 783, vh 800)",
+        "A \"Arbeiten\" von aktionsleiste (top 718, bottom 762, vh 800)",
+        "A \"Über uns\" von aktionsleiste (top 756, bottom 800, vh 800)"
+      ]
+    },
+    {
+      "seite": "/kontakt.html",
+      "breite": 360,
+      "anzahl": 3,
+      "beispiele": [
+        "INPUT \"\" von aktionsleiste (top 752, bottom 800, vh 800)",
+        "TEXTAREA \"\" von aktionsleiste (top 739, bottom 910, vh 800)",
+        "A \"[PLATZHALTER: Telefonnummer]\" von aktionsleiste (top 744, bottom 760, vh 800)"
+      ]
+    },
+    {
+      "seite": "/datenschutz.html",
+      "breite": 360,
+      "anzahl": 5,
+      "beispiele": [
+        "A \"8.Links zu externen Diensten\" von aktionsleiste (top 730, bottom 774, vh 800)",
+        "A \"9.Speicherdauer\" von aktionsleiste (top 756, bottom 800, vh 800)",
+        "A \"10.Ihre Rechte\" von aktionsleiste (top 756, bottom 800, vh 800)",
+        "A \"11.Beschwerderecht\" von aktionsleiste (top 756, bottom 800, vh 800)",
+        "A \"12.Verschlüsselung\" von aktionsleiste (top 756, bottom 800, vh 800)"
+      ]
+    },
+    {
+      "seite": "/404.html",
+      "breite": 360,
+      "anzahl": 1,
+      "beispiele": [
+        "A \"Anrufen: [PLATZHALTER: Telefonnummer]\" von aktionsleiste (top 752, bottom 800, vh 800)"
+      ]
+    },
+    {
+      "seite": "/index.html",
+      "breite": 1440,
+      "anzahl": 1,
+      "beispiele": [
+        "A \"Zum Inhalt springen\" von kopf (top -72, bottom -11, vh 900)"
+      ]
+    }
+  ],
+  "formularTab": [
+    {
+      "breite": 360,
+      "tabsBisName": 6,
+      "verdeckt": [
+        "f-email von aktionsleiste",
+        "f-nachricht von aktionsleiste"
+      ],
+      "reihenfolge": [
+        "f-telefon",
+        "f-email",
+        "f-ort",
+        "f-leistung",
+        "f-nachricht",
+        "f-zeitraum",
+        "A:Datenschutzerklärung",
+        "BUTTON:Anfrage senden"
+      ],
+      "honeypotErreicht": false,
+      "leistungGewaehlt": "tapezierarbeiten",
+      "nachSenden": "/danke.html#anfrage",
+      "nachZurueck": "/kontakt.html",
+      "knopfNachZurueck": {
+        "text": "Anfrage senden",
+        "ariaDisabled": null
+      },
+      "zweitesSenden": "/danke.html#anfrage"
+    },
+    {
+      "breite": 1440,
+      "tabsBisName": 11,
+      "reihenfolge": [
+        "f-telefon",
+        "f-email",
+        "f-ort",
+        "f-leistung",
+        "f-nachricht",
+        "f-zeitraum",
+        "A:Datenschutzerklärung",
+        "BUTTON:Anfrage senden"
+      ],
+      "honeypotErreicht": false,
+      "leistungGewaehlt": "tapezierarbeiten",
+      "nachSenden": "/danke.html#anfrage",
+      "nachZurueck": "/kontakt.html",
+      "knopfNachZurueck": {
+        "text": "Anfrage senden",
+        "ariaDisabled": null
+      },
+      "zweitesSenden": "/danke.html#anfrage"
+    }
+  ],
+  "validierung": [
+    {
+      "leerUrl": "/kontakt.html",
+      "leerZusammenfassungSichtbar": true,
+      "leerFokus": "fehler-zusammenfassung",
+      "leerFehler": [
+        "Bitte geben Sie Ihren Namen an.",
+        "Bitte geben Sie eine Telefonnummer oder eine E-Mail-Adresse an.",
+        "Bitte beschreiben Sie kurz, was gemacht werden soll."
+      ],
+      "ariaInvalid": [
+        "f-name",
+        "f-telefon",
+        "f-email",
+        "f-nachricht"
+      ],
+      "describedbyName": "f-name-fehler",
+      "sprunglinkFokus": "f-name",
+      "mailFehler": [
+        "Bitte geben Sie eine gültige E-Mail-Adresse an, zum Beispiel name@beispiel.de."
+      ],
+      "mailFehlerAmFeld": true,
+      "telFehler": [
+        "Bitte geben Sie eine gültige Telefonnummer an – nur Ziffern, Leerzeichen und die Zeichen + ( ) / -."
+      ],
+      "nachKorrekturZusammenfassung": false,
+      "nachKorrekturInvalid": [],
+      "leereDescribedby": [],
+      "axe": [],
+      "vorauswahl": "fassade",
+      "serverUrl": "/kontakt.php#anfrage",
+      "serverZusammenfassung": true,
+      "serverFokus": "",
+      "serverFehler": [
+        "Bitte geben Sie Ihren Namen an.",
+        "Bitte geben Sie eine gültige E-Mail-Adresse an, zum Beispiel name@beispiel.de.",
+        "Bitte beschreiben Sie kurz, was gemacht werden soll."
+      ],
+      "serverWertEmail": "falsch",
+      "serverCssGeladen": "Archivo, \"Helvetica Neue\", Arial, sans-serif",
+      "serverAxe": []
+    }
+  ],
+  "reveal": [
+    {
+      "seite": "/index.html",
+      "breite": 360,
+      "webdriver": false,
+      "wartendAnfang": 20,
+      "nochUnsichtbar": 0,
+      "beispiele": [],
+      "sichtbarAberWartendNachEnde": 0
+    },
+    {
+      "seite": "/leistungen.html",
+      "breite": 360,
+      "webdriver": false,
+      "wartendAnfang": 17,
+      "nochUnsichtbar": 0,
+      "beispiele": [],
+      "sichtbarAberWartendNachEnde": 0
+    },
+    {
+      "seite": "/arbeiten.html",
+      "breite": 360,
+      "webdriver": false,
+      "wartendAnfang": 11,
+      "nochUnsichtbar": 0,
+      "beispiele": [],
+      "sichtbarAberWartendNachEnde": 0
+    },
+    {
+      "seite": "/ueber-uns.html",
+      "breite": 360,
+      "webdriver": false,
+      "wartendAnfang": 12,
+      "nochUnsichtbar": 0,
+      "beispiele": [],
+      "sichtbarAberWartendNachEnde": 0
+    },
+    {
+      "seite": "/kontakt.html",
+      "breite": 360,
+      "webdriver": false,
+      "wartendAnfang": 2,
+      "nochUnsichtbar": 0,
+      "beispiele": [],
+      "sichtbarAberWartendNachEnde": 0
+    },
+    {
+      "seite": "/danke.html",
+      "breite": 360,
+      "webdriver": false,
+      "wartendAnfang": 0,
+      "nochUnsichtbar": 0,
+      "beispiele": [],
+      "sichtbarAberWartendNachEnde": 0
+    },
+    {
+      "seite": "/impressum.html",
+      "breite": 360,
+      "webdriver": false,
+      "wartendAnfang": 0,
+      "nochUnsichtbar": 0,
+      "beispiele": [],
+      "sichtbarAberWartendNachEnde": 0
+    },
+    {
+      "seite": "/datenschutz.html",
+      "breite": 360,
+      "webdriver": false,
+      "wartendAnfang": 0,
+      "nochUnsichtbar": 0,
+      "beispiele": [],
+      "sichtbarAberWartendNachEnde": 0
+    },
+    {
+      "seite": "/404.html",
+      "breite": 360,
+      "webdriver": false,
+      "wartendAnfang": 0,
+      "nochUnsichtbar": 0,
+      "beispiele": [],
+      "sichtbarAberWartendNachEnde": 0
+    },
+    {
+      "seite": "/index.html",
+      "breite": 1440,
+      "webdriver": false,
+      "wartendAnfang": 20,
+      "nochUnsichtbar": 0,
+      "beispiele": [],
+      "sichtbarAberWartendNachEnde": 0
+    },
+    {
+      "seite": "/leistungen.html",
+      "breite": 1440,
+      "webdriver": false,
+      "wartendAnfang": 16,
+      "nochUnsichtbar": 0,
+      "beispiele": [],
+      "sichtbarAberWartendNachEnde": 0
+    },
+    {
+      "seite": "/arbeiten.html",
+      "breite": 1440,
+      "webdriver": false,
+      "wartendAnfang": 10,
+      "nochUnsichtbar": 0,
+      "beispiele": [],
+      "sichtbarAberWartendNachEnde": 0
+    },
+    {
+      "seite": "/ueber-uns.html",
+      "breite": 1440,
+      "webdriver": false,
+      "wartendAnfang": 12,
+      "nochUnsichtbar": 0,
+      "beispiele": [],
+      "sichtbarAberWartendNachEnde": 0
+    },
+    {
+      "seite": "/kontakt.html",
+      "breite": 1440,
+      "webdriver": false,
+      "wartendAnfang": 2,
+      "nochUnsichtbar": 0,
+      "beispiele": [],
+      "sichtbarAberWartendNachEnde": 0
+    },
+    {
+      "seite": "/danke.html",
+      "breite": 1440,
+      "webdriver": false,
+      "wartendAnfang": 0,
+      "nochUnsichtbar": 0,
+      "beispiele": [],
+      "sichtbarAberWartendNachEnde": 0
+    },
+    {
+      "seite": "/impressum.html",
+      "breite": 1440,
+      "webdriver": false,
+      "wartendAnfang": 0,
+      "nochUnsichtbar": 0,
+      "beispiele": [],
+      "sichtbarAberWartendNachEnde": 0
+    },
+    {
+      "seite": "/datenschutz.html",
+      "breite": 1440,
+      "webdriver": false,
+      "wartendAnfang": 0,
+      "nochUnsichtbar": 0,
+      "beispiele": [],
+      "sichtbarAberWartendNachEnde": 0
+    },
+    {
+      "seite": "/404.html",
+      "breite": 1440,
+      "webdriver": false,
+      "wartendAnfang": 0,
+      "nochUnsichtbar": 0,
+      "beispiele": [],
+      "sichtbarAberWartendNachEnde": 0
+    }
+  ],
+  "axeOhneWebdriver": [
+    {
+      "seite": "/index.html",
+      "breite": 360,
+      "verstoesse": []
+    },
+    {
+      "seite": "/leistungen.html",
+      "breite": 360,
+      "verstoesse": []
+    },
+    {
+      "seite": "/arbeiten.html",
+      "breite": 360,
+      "verstoesse": []
+    },
+    {
+      "seite": "/ueber-uns.html",
+      "breite": 360,
+      "verstoesse": []
+    },
+    {
+      "seite": "/kontakt.html",
+      "breite": 360,
+      "verstoesse": []
+    },
+    {
+      "seite": "/danke.html",
+      "breite": 360,
+      "verstoesse": []
+    },
+    {
+      "seite": "/impressum.html",
+      "breite": 360,
+      "verstoesse": []
+    },
+    {
+      "seite": "/datenschutz.html",
+      "breite": 360,
+      "verstoesse": []
+    },
+    {
+      "seite": "/404.html",
+      "breite": 360,
+      "verstoesse": []
+    },
+    {
+      "seite": "/index.html",
+      "breite": 1440,
+      "verstoesse": []
+    },
+    {
+      "seite": "/leistungen.html",
+      "breite": 1440,
+      "verstoesse": []
+    },
+    {
+      "seite": "/arbeiten.html",
+      "breite": 1440,
+      "verstoesse": []
+    },
+    {
+      "seite": "/ueber-uns.html",
+      "breite": 1440,
+      "verstoesse": []
+    },
+    {
+      "seite": "/kontakt.html",
+      "breite": 1440,
+      "verstoesse": []
+    },
+    {
+      "seite": "/danke.html",
+      "breite": 1440,
+      "verstoesse": []
+    },
+    {
+      "seite": "/impressum.html",
+      "breite": 1440,
+      "verstoesse": []
+    },
+    {
+      "seite": "/datenschutz.html",
+      "breite": 1440,
+      "verstoesse": []
+    },
+    {
+      "seite": "/404.html",
+      "breite": 1440,
+      "verstoesse": []
+    }
+  ],
+  "konsole": []
+}
