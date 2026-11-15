@@ -28,5 +28,4 @@
 | gruenerde #5E6B57 | leinen #E8E1D3 | 4.34 : 1 | AA groß/UI |
 | gruenerdeHell #D5DBCB | gruenerde #5E6B57 | 3.99 : 1 | AA groß/UI |
 | linie #C9C0AF | kalk #F4F1EA | 1.60 : 1 | nicht ausreichend |
-| fehler #A12A1C | kalk #F4F1EA | 6.50 : 1 | AA |
 | rot #A63A20 | umbra #25221E | 2.45 : 1 | nicht ausreichend |

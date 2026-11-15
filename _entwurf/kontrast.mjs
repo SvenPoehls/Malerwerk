@@ -12,7 +12,6 @@ const P = {
   rotDunkel: '#8A2E17', // Englischrot dunkel – Hover/Textlink
   ocker: '#C99A4B',     // Ocker – nur Fläche (Platzhalter), nie Text
   weiss: '#FFFFFF',
-  fehler: '#A12A1C',
 };
 const lum = (hex) => {
   const c = hex.replace('#', '').match(/../g).map((h) => parseInt(h, 16) / 255)
@@ -27,7 +26,7 @@ const paare = [
   ['kalk', 'rot'], ['weiss', 'rot'], ['kalk', 'rotDunkel'],
   ['kalk', 'umbra'], ['leinen', 'umbra'], ['gruenerdeHell', 'umbra'], ['ocker', 'umbra'],
   ['kalk', 'gruenerde'], ['umbra', 'gruenerde'], ['gruenerde', 'kalk'],
-  ['linieStark', 'kalk'], ['linieStark', 'leinen'], ['rot', 'gruenerde'], ['kalk', 'gruenerdeHell'], ['umbra', 'rot'], ['ocker', 'kalk'], ['gruenerde', 'leinen'], ['gruenerdeHell', 'gruenerde'], ['linie', 'kalk'], ['fehler', 'kalk'], ['rot', 'umbra'],
+  ['linieStark', 'kalk'], ['linieStark', 'leinen'], ['rot', 'gruenerde'], ['kalk', 'gruenerdeHell'], ['umbra', 'rot'], ['ocker', 'kalk'], ['gruenerde', 'leinen'], ['gruenerdeHell', 'gruenerde'], ['linie', 'kalk'], ['rot', 'umbra'],
 ];
 for (const [t, b] of paare) {
   const r = ratio(P[t], P[b]);
