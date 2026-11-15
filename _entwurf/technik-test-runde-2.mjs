@@ -68,6 +68,7 @@ const fokusInfo = (p) => p.evaluate(() => {
   };
 });
 
+console.error('Abschnitt', new Date().toISOString());
 // ---------- 2. Skip-Link, Fokus sichtbar, Verdeckung ----------
 for (const breite of [360, 1440]) {
   const ctx = await browser.newContext({ viewport: { width: breite, height: breite < 768 ? 800 : 900 } });
@@ -111,6 +112,7 @@ for (const breite of [360, 1440]) {
   await ctx.close();
 }
 
+console.error('Abschnitt', new Date().toISOString());
 // ---------- 3. Mobile Navigation per Tastatur ----------
 for (const breite of [360, 768]) {
   const ctx = await browser.newContext({ viewport: { width: breite, height: 800 } });
@@ -171,6 +173,7 @@ for (const breite of [360, 768]) {
   await ctx.close();
 }
 
+console.error('Abschnitt', new Date().toISOString());
 // ---------- 4. Formular komplett per Tastatur (PHP-Server mit Fake-Sendmail) ----------
 for (const breite of [360, 1440]) {
   const ctx = await browser.newContext({ viewport: { width: breite, height: breite < 768 ? 800 : 900 } });
@@ -215,6 +218,7 @@ for (const breite of [360, 1440]) {
   await ctx.close();
 }
 
+console.error('Abschnitt', new Date().toISOString());
 // ---------- 5. Validierung im Browser ----------
 {
   const ctx = await browser.newContext({ viewport: { width: 360, height: 800 } });
@@ -257,24 +261,24 @@ for (const breite of [360, 1440]) {
   // ?leistung-Vorauswahl
   await p.goto(PHP + '/kontakt.html?leistung=fassade', { waitUntil: 'networkidle' });
   v.vorauswahl = await p.inputValue('#f-leistung');
-  // Serverseitige Fehlerseite (ohne JS) – axe
-  const ctx2 = await browser.newContext({ viewport: { width: 360, height: 800 }, javaScriptEnabled: false });
-  const p2 = await ctx2.newPage();
-  await p2.goto(PHP + '/kontakt.html', { waitUntil: 'networkidle' });
-  await p2.fill('#f-email', 'falsch');
-  await p2.click('[data-senden]');
-  await p2.waitForLoadState('networkidle');
-  v.ohneJsUrl = p2.url().replace(PHP, '');
-  v.ohneJsZusammenfassung = await p2.isVisible('#fehler-zusammenfassung');
-  v.ohneJsFehler = await p2.$$eval('[data-fehlerliste] a', (as) => as.map((a) => a.textContent));
-  v.ohneJsCss = await p2.evaluate(() => getComputedStyle(document.body).fontFamily);
-  const axe2 = await new AxeBuilder({ page: p2 }).withTags(['wcag2a', 'wcag2aa', 'wcag21aa']).analyze();
-  v.ohneJsAxe = axe2.violations.map((x) => x.id + ':' + x.impact);
-  await ctx2.close();
+  // Serverseitige Fehlerseite: Formular ohne Client-Prüfung absenden (form.submit() umgeht Submit-Handler und Browser-Validierung)
+  await p.goto(PHP + '/kontakt.html', { waitUntil: 'networkidle' });
+  await p.fill('#f-email', 'falsch');
+  await Promise.all([p.waitForNavigation({ timeout: 8000 }).catch(() => {}), p.evaluate(() => HTMLFormElement.prototype.submit.call(document.querySelector('[data-formular]')))]);
+  await p.waitForLoadState('networkidle');
+  v.serverUrl = p.url().replace(PHP, '');
+  v.serverZusammenfassung = await p.isVisible('#fehler-zusammenfassung');
+  v.serverFokus = await p.evaluate(() => document.activeElement.id);
+  v.serverFehler = await p.$$eval('[data-fehlerliste] a', (as) => as.map((a) => a.textContent));
+  v.serverWertEmail = await p.inputValue('#f-email');
+  v.serverCssGeladen = await p.evaluate(() => getComputedStyle(document.body).fontFamily);
+  const axe2 = await new AxeBuilder({ page: p }).withTags(['wcag2a', 'wcag2aa', 'wcag21aa']).analyze();
+  v.serverAxe = axe2.violations.map((x) => x.id + ':' + x.impact);
   ergebnis.validierung.push(v);
   await ctx.close();
 }
 
+console.error('Abschnitt', new Date().toISOString());
 // ---------- 6. navigator.webdriver = false: Einblendungen + axe ----------
 for (const breite of [360, 1440]) {
   const ctx = await browser.newContext({ viewport: { width: breite, height: breite < 768 ? 800 : 900 } });
