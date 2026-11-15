@@ -155,13 +155,21 @@
     if (passend) auswahl.value = gewuenscht;
   }
 
-  // Versandfehler über ?status=fehler anzeigen
+  // Versandfehler über ?status=fehler anzeigen. kontakt.php nutzt das selbst nicht (es gibt die Seite
+  // direkt mit Meldung aus); der Parameter bleibt für eine spätere Weiterleitungs-Variante bzw. für
+  // einen externen Formular-Dienst, der bei Fehlern auf kontakt.html?status=fehler zurückleitet.
   var versand = document.getElementById('meldung-versand');
   if (versand && params.get('status') === 'fehler') versand.hidden = false;
 
-  // Serverseitig gemeldete Fehler (kontakt.php ohne JS-Prüfung): Zusammenfassung fokussieren
+  // Serverseitig gemeldete Fehler (kontakt.php): Zusammenfassung bzw. Versandfehler fokussieren,
+  // damit Screenreader und Tastatur direkt bei der Meldung landen.
   var vorhanden = document.getElementById('fehler-zusammenfassung');
-  if (vorhanden && !vorhanden.hidden) vorhanden.focus();
+  if (vorhanden && !vorhanden.hidden) {
+    vorhanden.focus();
+  } else if (versand && !versand.hidden) {
+    versand.tabIndex = -1;
+    versand.focus();
+  }
 
   formular.noValidate = true; // eigene, verständliche Meldungen statt Browser-Blasen
 
@@ -175,9 +183,14 @@
   var zusammenfassung = feld('fehler-zusammenfassung');
   var fehlerliste = zusammenfassung ? zusammenfassung.querySelector('[data-fehlerliste]') : null;
   var abgeschickt = false;
+  var senden = formular.querySelector('[data-senden]');
+  var sendenText = senden ? senden.querySelector('[data-senden-text]') : null;
+  var sperre = function (ev) { ev.preventDefault(); };
 
   var TEL_MUSTER = /^[0-9+()\/\-\s]{5,40}$/;
-  var MAIL_MUSTER = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+  // Nur ASCII (keine Umlaute) – entspricht FILTER_VALIDATE_EMAIL in kontakt.php, damit Browser- und
+  // Serverprüfung dieselben Adressen annehmen.
+  var MAIL_MUSTER = /^[A-Za-z0-9!#$%&'*+\/=?^_`{|}~-]+(?:\.[A-Za-z0-9!#$%&'*+\/=?^_`{|}~-]+)*@[A-Za-z0-9](?:[A-Za-z0-9-]*[A-Za-z0-9])?(?:\.[A-Za-z0-9](?:[A-Za-z0-9-]*[A-Za-z0-9])?)*\.[A-Za-z]{2,}$/;
 
   var setzeFehler = function (input, fehlerId, text) {
     var p = feld(fehlerId);
@@ -273,14 +286,20 @@
       return;
     }
     if (zusammenfassung) zusammenfassung.hidden = true;
-    var senden = formular.querySelector('[data-senden]');
     if (senden) {
-      var text = senden.querySelector('[data-senden-text]');
-      if (text) text.textContent = 'Wird gesendet …';
+      if (sendenText) sendenText.textContent = 'Wird gesendet …';
       senden.setAttribute('aria-disabled', 'true');
       // Doppeltes Absenden verhindern, ohne den Fokus zu verlieren
-      formular.addEventListener('submit', function (ev) { ev.preventDefault(); });
+      formular.addEventListener('submit', sperre);
     }
+  });
+
+  // Zurück-Taste (Back/Forward-Cache): Sperre aufheben, sonst ließe sich das Formular nicht erneut senden
+  window.addEventListener('pageshow', function (e) {
+    if (!e.persisted || !senden) return;
+    formular.removeEventListener('submit', sperre);
+    senden.removeAttribute('aria-disabled');
+    if (sendenText) sendenText.textContent = 'Anfrage senden';
   });
 
   // Nach dem ersten Absenden: Meldungen beim Korrigieren aktualisieren

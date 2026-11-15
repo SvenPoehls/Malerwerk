@@ -235,7 +235,7 @@ const JSONLD = {
   '@id': `${DOMAIN}/#betrieb`,
   name: 'Malerwerk',
   url: `${DOMAIN}/`,
-  logo: `${DOMAIN}/icon-512.png`,
+  logo: `${DOMAIN}/assets/bilder/logo.svg`,
   image: `${DOMAIN}/assets/bilder/og-malerwerk.jpg`,
   description: 'Malerbetrieb in Musterstadt: Innenanstrich, Tapezierarbeiten, Fassade, Lackierarbeiten, Wandgestaltung und Bodenbeschichtung für Privatkunden. Besichtigung vor Ort, Angebot schriftlich.',
   areaServed: { '@type': 'City', name: 'Musterstadt' },
@@ -272,11 +272,14 @@ function startseite() {
   <div class="container raster hero__raster">
     <div class="hero__text">
       ${etikett('Malerbetrieb in Musterstadt')}
-      <h1 id="hero-titel">Streichen, tapezieren, lackieren – in Musterstadt</h1>
+      <h1 id="hero-titel">Streichen, tapezieren, lackieren&nbsp;– in&nbsp;Musterstadt</h1>
       <p class="lead hero__lead">Malerwerk übernimmt Malerarbeiten in Wohnungen, Häusern und an Fassaden in Musterstadt und Umgebung. Wir sehen uns Ihre Räume vor Ort an und schicken Ihnen danach ein schriftliches Angebot. Bevor gestrichen wird, decken wir ab und kleben ab.</p>
       <div class="knopfreihe">
         ${knopfAnfrage()}
-        <a class="knopf knopf--sekundaer" href="${TEL}">${icon('phone')}<span>Anrufen:<wbr>${phTel}</span></a>
+        <div class="hero__anruf">
+          ${knopfAnrufen()}
+          <p class="meta hero__nummer">${ph('Telefonnummer')}</p>
+        </div>
       </div>
       <p class="meta hero__usp">${ph('Alleinstellungsmerkmal in einem Satz, z.&nbsp;B. Meisterbetrieb oder Gründungsjahr – nur wenn belegt')}</p>
     </div>
@@ -397,7 +400,7 @@ function leistungAbschnitt({ nr, slug, h2, text, liste, bild, gespiegelt }) {
 }
 
 function leistungen() {
-  const chips = LEISTUNGEN.map(([nr, slug, name]) => `<li><a href="#${slug}">${feld(`ton-${nr}`)}<span class="sprungleiste__code">MW-${nr}</span> ${name}</a></li>`).join('\n        ');
+  const chips = LEISTUNGEN.map(([nr, slug, name]) => `<li><a href="#${slug}">${feld(`ton-${nr}`)}<span class="sprungleiste__code">MW-${nr}</span> <span class="sprungleiste__name">${name}</span></a></li>`).join('\n        ');
   const main = `<section class="seitenkopf" aria-labelledby="seiten-titel">
   <div class="container">
     <div class="raster seitenkopf__raster">
@@ -423,7 +426,7 @@ ${leistungAbschnitt({
   })}
 
 ${leistungAbschnitt({
-    nr: '02', slug: 'tapezierarbeiten', h2: 'Tapezieren – vom Untergrund bis zur letzten Bahn', gespiegelt: true,
+    nr: '02', slug: 'tapezierarbeiten', h2: 'Tapezieren&nbsp;– vom Untergrund bis zur letzten Bahn', gespiegelt: true,
     text: 'Eine Tapete sieht nur so gut aus wie die Wand darunter. Deshalb entfernen wir zuerst alte Tapeten und Kleberreste und glätten den Untergrund. Danach kleben wir die neue Tapete Bahn für Bahn – auf Stoß und mit passendem Muster. Ob Raufaser, Vliestapete oder Mustertapete: Wir beraten Sie bei der Besichtigung.',
     liste: ['Alte Tapeten und Kleberreste entfernen', 'Wand spachteln und glätten', 'Neue Tapete zuschneiden und kleben', 'Muster an den Stößen anpassen', 'Tapete auf Wunsch überstreichen'],
     bild: { sv: '3-2', ton: 'ton-leinen', motiv: 'Tapetenbahn wird angesetzt', aria: 'Bildplatzhalter: Eine Tapetenbahn wird an der Wand angesetzt und glatt gestrichen', alt: 'Eine neue Tapetenbahn wird an der Wand angesetzt und mit der Tapezierbürste glatt gestrichen, daneben die bereits geklebte Bahn.' },
@@ -457,7 +460,7 @@ ${leistungAbschnitt({
 
 ${leistungAbschnitt({
     nr: '04', slug: 'lackierarbeiten', h2: 'Lackierarbeiten an Türen, Fenstern und Heizkörpern',
-    text: 'Abgegriffene Türen, vergilbte Heizkörper oder ein verwitterter Fensterrahmen wirken schnell wie neu, wenn sie frisch lackiert sind. Wir schleifen die Flächen an, füllen Macken und tragen den Lack in dünnen Schichten auf. Das gilt für Holz ebenso wie für Metall.',
+    text: 'Abgegriffene Türen, vergilbte Heizkörper oder ein verwitterter Fensterrahmen sehen frisch lackiert wieder gepflegt aus. Wir schleifen die Flächen an, füllen Macken und tragen den Lack in dünnen Schichten auf. Das gilt für Holz ebenso wie für Metall.',
     liste: ['Türen, Zargen und Fensterrahmen lackieren', 'Heizkörper und Rohre lackieren', 'Geländer und Metallteile lackieren', 'Altanstrich anschleifen, Macken füllen', 'Lack in mehreren dünnen Schichten auftragen'],
     bild: { sv: '3-2', ton: 'ton-ocker', motiv: 'Türzarge wird lackiert', aria: 'Bildplatzhalter: Eine Türzarge wird mit dem Pinsel lackiert, die Wand daneben ist abgeklebt', alt: 'Nahaufnahme einer Türzarge, die mit einem feinen Pinsel weiß lackiert wird; die angrenzende Wand ist mit Klebeband abgeklebt.' },
   })}
@@ -493,16 +496,12 @@ ${leistungAbschnitt({
     bild: { sv: '3-2', ton: 'ton-gruen-hell', motiv: 'Beschichteter Kellerboden', aria: 'Bildplatzhalter: Frisch beschichteter, grauer Kellerboden mit abgesetztem Sockel', alt: 'Frisch beschichteter Kellerboden in Grau, gleichmäßig matt glänzend, mit sauber abgesetztem Sockel an der Wand.' },
   })}
 
-<section class="sektion sektion--leinen" aria-labelledby="angebot-titel">
+<section class="sektion sektion--kompakt sektion--leinen angebot" aria-labelledby="angebot-titel">
   <div class="container raster">
     <div class="angebot__box reveal">
       ${etikett('Angebot')}
       <h2 id="angebot-titel">Angebot nach Besichtigung</h2>
       <p class="messlatte">Wie viel Arbeit in einem Raum oder an einer Fassade steckt, hängt vom Untergrund, von der Fläche und vom gewünschten Ergebnis ab. Deshalb sehen wir uns alles zuerst vor Ort an. Danach erhalten Sie ein schriftliches Angebot.</p>
-      <div class="knopfreihe">
-        ${knopfAnfrage()}
-        ${knopfAnrufen()}
-      </div>
     </div>
   </div>
 </section>
@@ -581,7 +580,7 @@ function arbeiten() {
 <section class="sektion" aria-labelledby="projekt3-etikett projekt3-titel">
   <div class="container raster">
     <div class="projekt3__info reveal">
-      <div class="datenblatt ton-05">
+      <div class="datenblatt ton-06">
         ${etikett('Projekt 03', { id: 'projekt3-etikett' })}
         <dl>
           ${datenzeilen(false)}
@@ -635,7 +634,7 @@ function ueberUns() {
     <div class="raster">
       <div class="seitenkopf__titel--breit">
         ${etikett('Über uns')}
-        <h1 id="seiten-titel">Malerwerk – Malerbetrieb in Musterstadt</h1>
+        <h1 id="seiten-titel">Malerwerk&nbsp;– Malerbetrieb in&nbsp;Musterstadt</h1>
       </div>
     </div>
     <p class="lead messlatte ueber__lead">Wer zu Ihnen nach Hause kommt, sollte vorher bekannt sein. Hier erfahren Sie, wer hinter Malerwerk steht und wie wir arbeiten – vom ersten Gespräch bis zur Abnahme.</p>
@@ -796,8 +795,8 @@ function kontakt() {
 
         <div class="feld">
           <label class="feld__label" for="f-nachricht">Was soll gemacht werden? <span aria-hidden="true">*</span></label>
+          <p class="feld__hilfe" id="f-nachricht-hilfe">Zum Beispiel: welche Räume oder Flächen, ungefähre Größe, gewünschte Farbe, Besonderheiten wie hohe Decken oder Altbau.</p>
           <textarea id="f-nachricht" name="nachricht" rows="6" maxlength="5000" required aria-describedby="f-nachricht-hilfe"></textarea>
-          <p class="feld__hilfe feld__hilfe--unten" id="f-nachricht-hilfe">Zum Beispiel: welche Räume oder Flächen, ungefähre Größe, gewünschte Farbe, Besonderheiten wie hohe Decken oder Altbau.</p>
           ${fehlerP('f-nachricht-fehler')}
         </div>
 
@@ -887,7 +886,6 @@ function danke() {
     title: 'Anfrage gesendet | Malerwerk',
     desc: 'Vielen Dank für Ihre Anfrage bei Malerwerk in Musterstadt. Wir melden uns bei Ihnen, um die nächsten Schritte und eine Besichtigung abzustimmen.',
     robots: 'noindex, follow',
-    canonical: `${DOMAIN}/danke.html`,
   }, main);
 }
 
@@ -902,7 +900,8 @@ function impressum() {
   </div>
 </section>
 <section class="sektion sektion--linie">
-  <div class="container rechtstext">
+  <div class="container">
+    <div class="rechtstext">
     <h2>Angaben gemäß §&nbsp;5 DDG</h2>
     <p>Malerwerk ${ph('vollständiger Firmenname mit Rechtsformzusatz, z.&nbsp;B. „Inhaber Vorname Nachname e.&nbsp;K.“ oder „Malerwerk GmbH“')}<br>
     ${ph('Straße und Hausnummer')}<br>
@@ -937,15 +936,16 @@ function impressum() {
     <h2>Redaktionell verantwortlich</h2>
     <p>Verantwortlich für den Inhalt nach §&nbsp;18 Abs.&nbsp;2 MStV:<br>${ph('Vorname Nachname')}<br>${ph('Anschrift, falls abweichend von oben')}</p>
 
-    <!-- Vorbereiteter Text nach § 36 VSBG – vom Kunden zu bestätigen (siehe Launch-Checkliste). -->
+    <!-- Vorbereiteter Text nach § 36 VSBG – vom Kunden zu bestätigen (siehe Launch-Checkliste). Nach der Bestätigung nur den Satz ohne Platzhalter-Markierung stehen lassen. -->
     <h2>Verbraucherstreitbeilegung</h2>
-    <p>Wir sind nicht bereit und nicht verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
+    <p>${ph('Erklärung nach §&nbsp;36 VSBG vom Betrieb bestätigen – vorbereiteter Text: „Wir sind nicht bereit und nicht verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.“')}</p>
 
     <h2>Bildnachweise</h2>
     <p>${ph('Bildnachweise – entfällt, wenn alle Fotos aus dem eigenen Betrieb stammen')}</p>
 
     <h2>Gestaltung</h2>
     <p>Schrift: Archivo, lizenziert unter der SIL Open Font License&nbsp;1.1. Icons: Lucide, lizenziert unter der ISC-Lizenz.</p>
+    </div>
   </div>
 </section>`;
   return seite({
@@ -962,11 +962,11 @@ function impressum() {
 function datenschutz() {
   const toc = [
     ['verantwortlicher', 'Verantwortlicher'], ['ueberblick', 'Überblick'], ['hosting', 'Hosting und Server-Logfiles'],
-    ['kontaktformular', 'Kontaktformular'], ['kontakt', 'Kontakt per E-Mail oder Telefon'], ['cookies', 'Keine Cookies, kein Tracking'],
+    ['kontaktformular', 'Kontaktformular'], ['kontakt', 'Kontakt per <span class="kein-umbruch">E-Mail</span> oder Telefon'], ['cookies', 'Keine Cookies, kein Tracking'],
     ['schriften', 'Schriften und Icons'], ['externe-links', 'Links zu externen Diensten'], ['speicherdauer', 'Speicherdauer'],
     ['rechte', 'Ihre Rechte'], ['beschwerde', 'Beschwerderecht'], ['verschluesselung', 'Verschlüsselung'],
   ];
-  const tocHtml = toc.map(([id, t], i) => `<li><a href="#${id}"><span class="toc__nr" aria-hidden="true">${i + 1}.</span>${t}</a></li>`).join('\n          ');
+  const tocHtml = toc.map(([id, t], i) => `<li><a href="#${id}"><span class="toc__nr" aria-hidden="true">${i + 1}.</span><span>${t}</span></a></li>`).join('\n          ');
   const main = `<section class="seitenkopf" aria-labelledby="seiten-titel">
   <div class="container">
     ${etikett('Rechtliches')}
@@ -976,12 +976,12 @@ function datenschutz() {
 </section>
 <section class="sektion sektion--linie">
   <div class="container">
-    <!-- Prüfhinweis nach der rechtlichen Prüfung entfernen (Launch-Checkliste). -->
-    <div class="pruefhinweis" role="note">
-      <strong>Wichtiger Hinweis: Dieser Text muss vor der Veröffentlichung geprüft werden</strong>
-      <p>Diese Datenschutzerklärung ist eine vorbereitete Struktur auf Grundlage der tatsächlich eingesetzten Technik dieser Website. Sie ersetzt keine Rechtsberatung. Vor der Veröffentlichung muss der Text mit einem Datenschutz-Generator (z.&nbsp;B. eRecht24 oder Datenschutz-Generator.de) erstellt bzw. abgeglichen oder anwaltlich geprüft werden. Alle mit Platzhalter gekennzeichneten Angaben sind zu ergänzen.</p>
-    </div>
     <div class="raster">
+      <!-- Prüfhinweis nach der rechtlichen Prüfung entfernen (Launch-Checkliste). -->
+      <div class="pruefhinweis" role="note">
+        <strong>Wichtiger Hinweis: Dieser Text muss vor der Veröffentlichung geprüft werden</strong>
+        <p>Diese Datenschutzerklärung ist eine vorbereitete Struktur auf Grundlage der tatsächlich eingesetzten Technik dieser Website. Sie ersetzt keine Rechtsberatung. Vor der Veröffentlichung muss der Text mit einem Datenschutz-Generator (z.&nbsp;B. eRecht24 oder Datenschutz-Generator.de) erstellt bzw. abgeglichen oder anwaltlich geprüft werden. Alle mit Platzhalter gekennzeichneten Angaben sind zu ergänzen.</p>
+      </div>
       <nav class="toc" aria-label="Inhalt der Datenschutzerklärung">
         ${etikett('Inhalt')}
         <ol>
@@ -1026,7 +1026,7 @@ function datenschutz() {
         <p>Das Formular wird auf unserem eigenen Webspace verarbeitet und Ihre Angaben werden per E-Mail an uns weitergeleitet. Dabei werden keine externen Dienste eingesetzt. Zum Schutz vor automatisierten Spam-Nachrichten verwenden wir ein unsichtbares Prüffeld; dafür werden keine zusätzlichen Daten erhoben und keine Drittanbieter eingebunden.</p>
         <p>Wir nutzen Ihre Angaben ausschließlich, um Ihre Anfrage zu beantworten, einen Besichtigungstermin zu vereinbaren und gegebenenfalls ein Angebot zu erstellen. Eine Weitergabe an Dritte findet nicht statt. Rechtsgrundlage ist Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;b DSGVO (Durchführung vorvertraglicher Maßnahmen auf Ihre Anfrage hin) sowie Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;f DSGVO für allgemeine Anfragen; unser berechtigtes Interesse liegt in der Beantwortung Ihres Anliegens.</p>
 
-        <h2 id="kontakt">5. Kontakt per E-Mail oder Telefon</h2>
+        <h2 id="kontakt">5. Kontakt per <span class="kein-umbruch">E-Mail</span> oder Telefon</h2>
         <p>Wenn Sie uns per E-Mail schreiben oder anrufen, verarbeiten wir die Angaben, die Sie uns dabei mitteilen – etwa Ihren Namen, Ihre Kontaktdaten und Ihr Anliegen –, um Ihre Anfrage zu bearbeiten. Die Rechtsgrundlagen sind dieselben wie beim Kontaktformular (Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;b bzw. lit.&nbsp;f DSGVO). Für E-Mails nutzen wir ${ph('E-Mail-Anbieter bzw. Postfach beim Hoster')}.</p>
 
         <h2 id="cookies">6. Keine Cookies, kein Tracking</h2>
@@ -1060,6 +1060,7 @@ function datenschutz() {
 
         <!-- Nur stehen lassen, wenn das SSL-Zertifikat beim Hoster aktiv ist (Launch-Checkliste). -->
         <h2 id="verschluesselung">12. Verschlüsselung</h2>
+        <p>${ph('erst nach Einrichtung des SSL-Zertifikats und der HTTPS-Weiterleitung bestätigen')}</p>
         <p>Diese Website nutzt aus Sicherheitsgründen eine SSL- bzw. TLS-Verschlüsselung. Eine verschlüsselte Verbindung erkennen Sie an „https://“ in der Adresszeile Ihres Browsers. Daten, die Sie über das Kontaktformular senden, können so nicht von Dritten mitgelesen werden.</p>
       </div>
     </div>

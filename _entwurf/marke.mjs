@@ -62,7 +62,7 @@ writeFileSync('site.webmanifest', JSON.stringify({
   lang: 'de',
   start_url: '/',
   display: 'browser',
-  theme_color: F.umbra,
+  theme_color: F.kalk, // wie <meta name="theme-color"> der Seiten (Kopfzeilenfarbe)
   background_color: F.kalk,
   icons: [
     { src: '/icon-192.png', sizes: '192x192', type: 'image/png' },

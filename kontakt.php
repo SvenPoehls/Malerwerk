@@ -2,6 +2,13 @@
 /**
  * Malerwerk – Versand des Anfrageformulars (kontakt.html).
  *
+ * Voraussetzungen auf dem Server:
+ *  - PHP 8.1 oder neuer (nutzt den Rückgabetyp `never` und den Operator `?->`;
+ *    auf älterem PHP endet das Formular mit Fehler 500)
+ *  - PHP-Erweiterungen `mbstring` und `dom` (bei den meisten Hostern Standard)
+ *  - funktionierende mail()-Funktion des Hosters
+ * Einstellungen (Empfänger, Absender, Domain): kontakt-config.php
+ *
  * Ablauf:
  *  - nur POST, sonst Weiterleitung auf kontakt.html
  *  - Honeypot gefüllt  -> still verwerfen, Weiterleitung auf danke.html
@@ -120,7 +127,7 @@ if (filter_var($empfaenger, FILTER_VALIDATE_EMAIL) !== false) {
 
     $leistung = $werte['leistung'] !== '' ? $config['leistungen'][$werte['leistung']] : '–';
     $zeilen = [
-        'Neue Anfrage über das Formular auf malerwerk.example',
+        'Neue Anfrage über das Formular auf ' . $config['domain'],
         '',
         'Name:       ' . $werte['name'],
         'Telefon:    ' . ($werte['telefon'] ?: '–'),
@@ -136,12 +143,14 @@ if (filter_var($empfaenger, FILTER_VALIDATE_EMAIL) !== false) {
         'Gesendet am ' . date('d.m.Y \u\m H:i') . ' Uhr',
     ];
     $text = implode("\r\n", array_map(static fn ($z) => str_replace("\n", "\r\n", $z), $zeilen));
+    // quoted-printable hält jede Zeile unter der SMTP-Grenze von 998 Zeichen (lange Nachrichten ohne Umbruch)
+    $text = quoted_printable_encode($text);
 
     $header = [
         'From'                      => $kodiere((string) $config['absender_name']) . ' <' . $config['absender'] . '>',
         'MIME-Version'              => '1.0',
         'Content-Type'              => 'text/plain; charset=UTF-8',
-        'Content-Transfer-Encoding' => '8bit',
+        'Content-Transfer-Encoding' => 'quoted-printable',
         'X-Mailer'                  => 'Malerwerk-Kontaktformular',
     ];
     // Reply-To nur mit geprüfter Adresse ohne CR/LF (Schutz vor Header-Injection)

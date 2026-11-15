@@ -37,7 +37,7 @@
   "@id": "https://malerwerk.example/#betrieb",
   "name": "Malerwerk",
   "url": "https://malerwerk.example/",
-  "logo": "https://malerwerk.example/icon-512.png",
+  "logo": "https://malerwerk.example/assets/bilder/logo.svg",
   "image": "https://malerwerk.example/assets/bilder/og-malerwerk.jpg",
   "description": "Malerbetrieb in Musterstadt: Innenanstrich, Tapezierarbeiten, Fassade, Lackierarbeiten, Wandgestaltung und Bodenbeschichtung für Privatkunden. Besichtigung vor Ort, Angebot schriftlich.",
   "areaServed": {
@@ -162,8 +162,8 @@
 
         <div class="feld">
           <label class="feld__label" for="f-nachricht">Was soll gemacht werden? <span aria-hidden="true">*</span></label>
+          <p class="feld__hilfe" id="f-nachricht-hilfe">Zum Beispiel: welche Räume oder Flächen, ungefähre Größe, gewünschte Farbe, Besonderheiten wie hohe Decken oder Altbau.</p>
           <textarea id="f-nachricht" name="nachricht" rows="6" maxlength="5000" required aria-describedby="f-nachricht-hilfe"></textarea>
-          <p class="feld__hilfe feld__hilfe--unten" id="f-nachricht-hilfe">Zum Beispiel: welche Räume oder Flächen, ungefähre Größe, gewünschte Farbe, Besonderheiten wie hohe Decken oder Altbau.</p>
           <p class="fehlertext" id="f-nachricht-fehler" hidden><svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" x2="12" y1="8" y2="12"/><line x1="12" x2="12.01" y1="16" y2="16"/></svg><span class="fehlertext__text"></span></p>
         </div>
 
