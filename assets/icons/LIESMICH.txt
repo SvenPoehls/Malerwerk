@@ -1,0 +1,4 @@
+Icons: Lucide (lucide-static, ISC-Lizenz, siehe LICENSE-Lucide.txt).
+Die verwendeten Icons (phone, mail, map-pin, clock, arrow-right, arrow-up-right,
+check, menu, x, circle-alert) sind als Inline-SVG direkt in den HTML-Seiten
+eingebettet (stroke-width 1.75, stroke="currentColor") – keine zusätzlichen Anfragen.
