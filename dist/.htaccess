@@ -1,0 +1,77 @@
+# Malerwerk – Apache-Konfiguration (Webspace)
+# Alle Modul-Blöcke sind mit <IfModule> abgesichert und schaden nicht, wenn ein Modul fehlt.
+
+# Gestaltete Fehlerseite
+ErrorDocument 404 /404.html
+
+# Zeichensatz
+AddDefaultCharset UTF-8
+AddType image/avif .avif
+AddType font/woff2 .woff2
+AddType application/manifest+json .webmanifest
+
+# Verzeichnislisten aus.
+# Standardmäßig auskommentiert: Erlaubt der Hoster keine „Options“ in .htaccess
+# (AllowOverride ohne Options), führt diese Zeile zu Fehler 500 für die ganze Website.
+# Nach dem Hochladen aktivieren (# entfernen) und prüfen: Startseite lädt weiter UND
+# z. B. https://<domain>/css/ zeigt keine Dateiliste mehr. Bei Fehler 500 wieder auskommentieren.
+# Options -Indexes
+# ErrorDocument 403 /404.html
+
+# Konfiguration des Formulars und interne Dateien nicht direkt abrufbar
+<FilesMatch "^(kontakt-config\.php|serve\.json|package(-lock)?\.json)$">
+  <IfModule mod_authz_core.c>
+    Require all denied
+  </IfModule>
+  <IfModule !mod_authz_core.c>
+    Order allow,deny
+    Deny from all
+  </IfModule>
+</FilesMatch>
+RedirectMatch 404 ^/(_entwurf|material|node_modules)(/|$)
+
+# HTTPS erzwingen (erst aktivieren, wenn das SSL-Zertifikat eingerichtet ist)
+# <IfModule mod_rewrite.c>
+#   RewriteEngine On
+#   RewriteCond %{HTTPS} !=on
+#   RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+# </IfModule>
+
+# HSTS: Browser merken sich, die Seite nur noch per HTTPS aufzurufen.
+# Erst aktivieren, wenn HTTPS dauerhaft und fehlerfrei läuft (inkl. aller Subdomains,
+# falls „includeSubDomains“ gesetzt wird). Zum Testen mit kurzer Dauer beginnen
+# (max-age=300), danach auf ein Jahr (31536000) erhöhen. Rückgängig machen ist nur
+# mit max-age=0 und erneutem Aufruf möglich.
+# <IfModule mod_headers.c>
+#   Header always set Strict-Transport-Security "max-age=31536000" "expr=%{HTTPS} == 'on'"
+# </IfModule>
+
+# Sicherheits-Header
+<IfModule mod_headers.c>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=()"
+</IfModule>
+
+# Kompression
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css text/plain text/xml application/javascript application/json application/xml image/svg+xml application/manifest+json
+</IfModule>
+
+# Browser-Caching: HTML kurz (Inhalte ändern sich), Assets lang.
+# CSS/JS haben keine Versionsnummer im Dateinamen -> 1 Woche statt 1 Jahr.
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresDefault "access plus 1 week"
+  ExpiresByType text/html "access plus 0 seconds"
+  ExpiresByType text/css "access plus 1 week"
+  ExpiresByType application/javascript "access plus 1 week"
+  ExpiresByType font/woff2 "access plus 1 year"
+  ExpiresByType image/avif "access plus 1 month"
+  ExpiresByType image/webp "access plus 1 month"
+  ExpiresByType image/jpeg "access plus 1 month"
+  ExpiresByType image/png "access plus 1 month"
+  ExpiresByType image/svg+xml "access plus 1 month"
+  ExpiresByType image/x-icon "access plus 1 month"
+</IfModule>
